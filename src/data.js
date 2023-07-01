@@ -46,7 +46,7 @@ export default {
    skills: [
         {
             skill:'JAVASCRIPT',
-            competence: 75
+            competense: 75
         },
         {
             skill:'CSS',
