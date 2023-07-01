@@ -1,0 +1,19 @@
+.imge{
+    min-width: 100px;
+    min-height: 100px;
+}
+*{
+    box-sizing: border-box;
+}
+.continer-skill{
+    width: 100%;
+    height: 10px;
+    background-color: antiquewhite;
+    border-radius: 20px;
+
+}
+.skill-level{
+    background-color: blue;
+    height: 100%;
+    border-radius: 20px;
+}
