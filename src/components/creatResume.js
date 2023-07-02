@@ -7,11 +7,18 @@ export default  function CreateResume(){
     const [userData,setUserData]=useState({})
     const [personaleInfo,setpersonaleInfo] = useState ({})
     const [profile,setProfile] = useState('')
-    const [studies , setSduies] = useState([])
-    const [exprience , setExprience] = useState({})
+    const [studies , setSduies] = useState([{}])
+    const [expriences , setExpriences] = useState([{}])
     const [skilLs,setSkiles] = useState([])
     const [imgUrl,setImgUrl] = useState('')
     const [experinecesNumber,setExprienceNumber]=useState(1)
+    const [studiesNumber,setstudiesNumber] = useState(1)
+    const [exprience,setExprience] =useState({
+        postion : '',
+        company : '',
+        start : '',
+        end : ''
+    })
     function upload(files){
         console.log(files)
         const formData = new FormData()
@@ -26,44 +33,103 @@ export default  function CreateResume(){
             [e.name]: e.value
         })
     }
+    function AddMoreExpeiences(){
+        setExprienceNumber((prev)=>prev+1)
+    }
     function renderExpriencesInput(){
         const input=[]
-        for(let i=0;i<=experinecesNumber;i++){
-            return(
-                input.push(
+        for(let i=0;i<experinecesNumber;i++){
+               input.push(
                     <div>
-                        <input type="text" name=" postion" onChange={ (event)=>inputExprince(event.target,i)}/>
+                        <input type="text" name="postion" onChange={ (event)=>inputExprince(event.target,i)}/>
                         <input type="text" name="company" onChange={ (event)=>inputExprince(event.target,i)}/>
                         <input type="text" name="start" onChange={ (event)=>inputExprince(event.target,i)}/>
                         <input type="text" name="end" onChange={ (event)=>inputExprince(event.target,i)}/>
                     </div>
-                
-                )
-            )
+               )
+           }
+        return input
+    }
+    function renderStudiesInput(){
+        const input=[]
+        for(let i=0;i<studiesNumber;i++){
+               input.push(
+                    <div>
+                        <input type="text" name="degree" onChange={ (event)=>inputStudies(event.target,i)}/>
+                        <input type="text" name="schoole" onChange={ (event)=>inputStudies(event.target,i)}/>
+                        <input type="text" name="start" onChange={ (event)=>inputStudies(event.target,i)}/>
+                        <input type="text" name="end" onChange={ (event)=>inputStudies(event.target,i)}/>
+                    </div>
+               )
+           }
+        return input
+    }
+    function inputStudies(e,i){
+        const newstate =  studies.map((obj)=>{
+            if(studies.indexOf(obj)==i){
+               return {...obj,[e.name]:e.value}
+            }
+        }
+        )
+       setSduies(newstate)
+    }
+    
+       
+    function inputExprince(e,i){
+        if(i<=expriences.length){
+            setExprience((obj)=>{
+                return {...obj,[e.name]:e.value}
+            })
+            console.log(exprience)
+           let array = expriences.slice()
+           array.splice(i,1)
+           let newarray= [...array.slice(0,i),exprience,...array.slice(i)]
+           console.log(newarray)
+           setExpriences(newarray)
+           console.log(expriences)
         }
     }
-    function inputExprince(e,i){
-        setExprience(
-            ...exprience,
-           [e.name], e.value
-            )
-    }
-    function renderExpriences(){
-        const expriences=[]
-        for(let i=0 ; i<=experinecesNumber; i++){
-            return(
-                expriences.push(
+    function renderStudies(){
+        const studie=[]
+            for(let i=0 ; i<studiesNumber; i++){
+                let obj = studies[i]
+               studie.push(
                     <div className="col-12 row">
                         <div className="col-md-8">
-                            <h4>{exprience.degree}</h4><h6>{exprience.schoole}</h6>
+                            <h4>{obj.degree ? obj.degree : ''}</h4><h6>{obj.schoole}</h6>
                         </div>
                         <div className="col-md-4">
-                            <span>{exprience.start}</span>-<span>{exprience.end}</span>
+                            <span>{obj.start}</span>-<span>{obj.end}</span>
                         </div>
                     </div>
                 )
-            )
+            
         }
+        return studie
+        
+    }
+    function renderExpriences(){
+            const array=[]
+            for(let i=0 ; i<2; i++){
+            let exprienc = expriences[i]
+
+                if(exprience[i]!== undefined){
+                    array.push(
+                        <div className="col-12 row">
+                            <div className="col-md-8">
+                                <h4>{exprienc.postion !==undefined?  exprienc.postion: '' }</h4><h6>{exprienc.company ? exprienc.company : ''}</h6>
+                            </div>
+                            <div className="col-md-4">
+                                <span>{exprienc.start ? exprienc.start :''}</span>-<span>{exprienc.end ? exprienc.end : ''}</span>
+                            </div>
+                        </div>
+                    )
+                }
+              
+            
+        }
+        return expriences
+        
     }
     
     function inputProfile(e){
@@ -84,9 +150,11 @@ export default  function CreateResume(){
                 <textarea onChange={()=>inputProfile(event.target)}></textarea>
             </div>
             <div>
-                {
-               
-                }
+                {renderExpriencesInput()}
+                <button className="btn-bg-primary" onClick={AddMoreExpeiences} >ADD MORE</button>
+            </div>
+            <div>
+                {renderStudiesInput()}
             </div>
             <div className="row h-25 bg-secondary text-light fst-italic">
                 <img src={imgUrl} className="h-100 col-2 img-fluid rounded imge"></img>
@@ -107,7 +175,12 @@ export default  function CreateResume(){
                     </div>
                 </div>
                <div className="mb-3 mt-3 container col-12 row">
-                    {renderExpriences}
+                    <h2 className="col-12">EXPERIENCE</h2>
+                    {renderExpriences()}
+               </div>
+               <div className="mb-3 mt-3 container col-12 row">
+                    <h2 className="col-12">STUDIES</h2>
+                    {renderStudies()}
                </div>
             </div>
         </div>
