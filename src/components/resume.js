@@ -16,7 +16,7 @@ export default function Resume(){
                 <img src="/imgs/foto.jpg" className="h-100 col-2 img-fluid rounded imge"></img>
                 <div className="col-10 row">
                     <h1 className="col-12 ">{data.personaleInfo.name} {data.personaleInfo.surename}</h1>
-                    <div className="row align-content-center">
+                    <div className="row align-content-center col-12">
                         <div className="col-4"><span>{data.personaleInfo.email}</span></div>
                         <div className="col-4"><span>{data.personaleInfo.cellphone}</span></div>
                         <div className="col-4"><span>{data.personaleInfo.address}</span></div>
@@ -33,10 +33,10 @@ export default function Resume(){
                         <h2 className="col-12">STUDIES</h2>
                         {data.studies.map((el)=>
                             <div className="col-12 row">
-                                <div className="col-md-8">
+                                <div className="col-md-8 ">
                                     <h4>{el.degree}</h4><h6>{el.schoole}</h6>
                                 </div>
-                                <div className="col-md-4">
+                                <div className="col-md-4 text-center">
                                     <span>{el.start}</span>-<span>{el.end}</span>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@ export default function Resume(){
                                     <div className="col-md-8">
                                         <h4>{el.postion}</h4><h6>{el.company}</h6>
                                     </div>
-                                    <div className="col-md-4">
+                                    <div className="col-md-4 text-center">
                                         <span>{el.start}</span>-<span>{el.end}</span>
                                     </div>
                                 </div>
