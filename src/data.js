@@ -4,7 +4,7 @@ export default {
     surename : 'ASSI',
     email:'bassel-assi@live.com',
     cellphone: 3201538330,
-    address: 'trieste'
+    address: 'via monte cengio, trieste'
    },
    profile:'Sono uno studente di magistrale in ingegneria di processo e materiali, con una grande passione e forte motivazione per diventare un sviluppatore fronte-end.'+
             'competenza in javascript, css,html, react, Bootstrap e object-oriented-programing. Sono una'+
