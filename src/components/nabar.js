@@ -7,12 +7,12 @@ import './navbar.css'
 import { Button } from "bootstrap";
 export default function Navbar(){
 
-    const navigate = useNavigate()
+    //const navigate = useNavigate()
     function changeRoute(){
         navigate('/')
     }
     return(
-       <nav className="navbar navbar-expand">
+       <nav className="navbar navbar-expand" style={{opacity:1}}>
             <div className="container w-100">
                 <ul className="navbar-nav w-100">
                     <li className="nav-item"><button className="nav-link">ABOUT ME</button></li>
