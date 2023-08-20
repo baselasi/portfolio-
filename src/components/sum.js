@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import Navbar from "./nabar";
 import Hello from "../imgs/helloWorld.jpg"
 import AboutMe from "./aboutMe";
-
+import Skills from "./skills";
 export default function Sum(){
     const [hello,setHello] = useState(true)
     const x = useRef()
@@ -15,16 +15,16 @@ export default function Sum(){
     }
     if(hello){
         return(
-           <div className="hello" style={{backgroundImage : `url(${Hello})`}} ref={x} onLoad={changeOpacity()}></div>
+           <div className="hello" style={{backgroundImage : `url(../imgs/helloWorld.jpg)`}} ref={x} onLoad={changeOpacity()}></div>
            )
     }
     
     else{
         return(
             <>
-                <div></div>
-                <Navbar/>
                 <AboutMe/>
+                <Navbar/>
+                <Skills/>
             </>
            
         )
