@@ -1,0 +1,30 @@
+.section{
+    height: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    position: relative;
+    overflow: hidden;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.imgs{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.9;
+    height: 100%;
+    width: 100%;
+}
+.first-continer{
+    position: relative;
+    text-align: center;
+}
+.danger{
+    color: red;
+}
