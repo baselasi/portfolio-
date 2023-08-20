@@ -6,6 +6,12 @@ export default {
     cellphone: 3201538330,
     address: 'via monte cengio, trieste'
    },
+   aboutMe:{
+    title:"FRONT-END DEVOLEOPER / PROCESS AND MATERIAL ENGINEER",
+    profile:`Sono uno studente di magistrale in ingegneria di processo e materiali, con una grande passione e forte motivazione per diventare un sviluppatore fronte-end.
+            competenza in javascript, css,html, react, Bootstrap e object-oriented-programing. Sono una
+            persona seria con una grande capacità di adattamento e la voglia di imparare. Cerco la mia prima esperienza per fare partire la mia carriera.`
+   },
    profile:'Sono uno studente di magistrale in ingegneria di processo e materiali, con una grande passione e forte motivazione per diventare un sviluppatore fronte-end.'+
             'competenza in javascript, css,html, react, Bootstrap e object-oriented-programing. Sono una'+
             'persona seria con una grande capacità di adattamento e la voglia di imparare. Cerco la mia prima esperienza per fare partire la mia carriera.',
@@ -43,32 +49,55 @@ export default {
             end:'2021'
         }
    ],
-   skills: [
+   programnigSkills: [
         {
             skill:'JAVASCRIPT',
-            competense: 75
+            competense: 75,
+            logo: '../imgs/java-script.png'
         },
         {
             skill:'CSS',
-            competense: 60
+            competense: 60,
+            logo: '../imgs/css-3.png'
         },
         {
             skill:'HTML',
-            competense: 75
+            competense: 75,
+            logo: '../imgs/html.png'
         },
         {
             skill: 'REACT',
-            competense: 60
+            competense: 60,
+            logo: '../imgs/react.png'
         },
         {
             skill:'BOOTSTRAP',
-            competense: 30
+            competense: 30,
+            logo:'../imgs/bootstrap.png'
         },
         {
             skill:'SQL',
-            competense: 20
+            competense: 20,
+            log: '../imgs/sql-server.png'
         },
     
+   ],
+   engineeringSkills:[
+        {
+            skill:'ASPEN-PLUS',
+            competence:50,
+            logo:'../imgs/aspenLogo.png'
+        },
+        {
+            skill:'MATLAB',
+            competence:50,
+            logo:'../imgs/matlab.png'
+        },
+        {
+            skill:'EDU-PACK',
+            competence:70,
+            logo:'EDU-PACK.png'
+        }
    ],
    languages : [
     {
