@@ -16,7 +16,7 @@ export default function Navbar(){
             <div className="container w-100">
                 <ul className="navbar-nav w-100">
                     <li className="nav-item"><button className="nav-link">ABOUT ME</button></li>
-                    <li className="nav-item"><button className="nav-link" onClick={changeRoute}>RESUME</button></li>
+                    <li className="nav-item"><button className="nav-link" >RESUME</button></li>
                     <li className="nav-item"><button className="nav-link">PROJECTS</button></li>
                 </ul>
             </div>
