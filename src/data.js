@@ -63,7 +63,7 @@ export default {
         {
             skill:'HTML',
             competense: 75,
-            logo: '../imgs/html.png'
+            logo: '../imgs/html (2).png'
         },
         {
             skill: 'REACT',
@@ -78,7 +78,7 @@ export default {
         {
             skill:'SQL',
             competense: 20,
-            log: '../imgs/sql-server.png'
+            logo: '../imgs/sql-server.png'
         },
     
    ],
@@ -91,13 +91,36 @@ export default {
         {
             skill:'MATLAB',
             competence:50,
-            logo:'../imgs/matlab.png'
+            logo:'../imgs/matalb.png'
         },
         {
             skill:'EDU-PACK',
             competence:70,
-            logo:'EDU-PACK.png'
+            logo:'../imgs/EDU-PACK.png'
         }
+   ],
+   softSkills:[
+    {
+        skill:'PROBLEM SOLVING',
+        logo:'../imgs/problem-sovling.png'
+    },
+    {
+        skill:'FLEXIBILITY',
+        logo:'../imgs/flexibility.png'
+    },
+    {
+        skill:'TEAM PLAYER',
+        logo:'../imgs/team-player.png'
+    },
+    {
+        skill:'RESPONSIVENESS',
+        logo:'../imgs/responsevines.png'
+    },
+    {
+        skill:'ORGANIZATION',
+        logo:'../ings/organization.png'
+    },
+
    ],
    languages : [
     {
