@@ -6,12 +6,12 @@ export default function Skills(){
     return(
         <section className="h-100">
             <div className=" container">
-                <h2>PROGRAMING SKILLS</h2>
+                <h2 className="border-bottom">PROGRAMING SKILLS</h2>
                 <div className=" row">
                     {data.programnigSkills.map((skill)=>{
                         return(
-                            <div className="  col-md-3">
-                                <div className="logo  " style={{backgroundImage: `url(${skill.logo})` }}></div>
+                            <div className="  col-md-4 d-flex flex-column justify-content-center align-items-center">
+                                <img className="logo " src={skill.logo}></img>
                                 <h4>
                                 {skill.skill}
                                 </h4>
@@ -22,12 +22,12 @@ export default function Skills(){
                 </div>
             </div>
             <div className="container">
-                <h2>ENGINERING SKILLS</h2>
+                <h2 className="border-bottom">ENGINERING SKILLS</h2>
                 <div className=" row">
                     {data.engineeringSkills.map((skill)=>{
                         return(
-                            <div className="  col-md-3">
-                                <div className="logo  " style={{backgroundImage: `url(${skill.logo})` }}></div>
+                            <div className="  col-md-4 d-flex flex-column justify-content-center align-items-center">
+                                <img className="logo " src={skill.logo}></img>
                                 <h4>
                                 {skill.skill}
                                 </h4>
@@ -36,6 +36,24 @@ export default function Skills(){
                         )
                     })}
                 </div>
+            </div>
+            <div className="container">
+                <h2 className="border-bottom">SOFT SKILLS</h2>
+                <div className=" row">
+                    {data.softSkills.map((skill)=>{
+                        return(
+                            <div className="  col-md-4 d-flex flex-column justify-content-center align-items-center">
+                                 <img className="logo " src={skill.logo}></img>
+                                <h4>
+                                {skill.skill}
+                                </h4>
+                            </div>
+                        )
+                    })}
+                </div>
+            </div>
+            <div>
+
             </div>
         </section>
         
