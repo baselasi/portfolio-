@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 .continer-skill{
-    width: 100%;
+    width: 80%;
     height: 20px;
     background-color: antiquewhite;
     border-radius: 20px;
@@ -16,7 +16,8 @@
     justify-content: space-between;
 }
 .skill-level{
-    background-color: blue;
+    background-color: rgba(26, 26, 218, 0.534);
     height: 100%;
     border-radius: 20px;
+    transition: width 10s 10s ease-in-out;
 }
