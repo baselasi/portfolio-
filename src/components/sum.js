@@ -3,6 +3,7 @@ import Navbar from "./nabar";
 import Hello from "../imgs/helloWorld.jpg"
 import AboutMe from "./aboutMe";
 import Skills from "./skills";
+import CreateResume from "./creatResume";
 export default function Sum(){
     const [hello,setHello] = useState(true)
     const x = useRef()
