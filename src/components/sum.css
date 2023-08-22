@@ -3,7 +3,7 @@
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-    color: rgba(255, 255, 255, 0.816);
+    color: rgb(255, 255, 255);
     position: relative;
     overflow: hidden;
 }
