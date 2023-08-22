@@ -52,32 +52,32 @@ export default {
    programnigSkills: [
         {
             skill:'JAVASCRIPT',
-            competense: 75,
+            competence: 75,
             logo: '../imgs/java-script.png'
         },
         {
             skill:'CSS',
-            competense: 60,
+            competence: 60,
             logo: '../imgs/css-3.png'
         },
         {
             skill:'HTML',
-            competense: 75,
+            competence: 75,
             logo: '../imgs/html (2).png'
         },
         {
             skill: 'REACT',
-            competense: 60,
+            competence: 60,
             logo: '../imgs/react.png'
         },
         {
             skill:'BOOTSTRAP',
-            competense: 30,
+            competence: 30,
             logo:'../imgs/bootstrap.png'
         },
         {
             skill:'SQL',
-            competense: 20,
+            competence: 20,
             logo: '../imgs/sql-server.png'
         },
     
