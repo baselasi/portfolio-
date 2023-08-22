@@ -19,5 +19,6 @@
     background-color: rgba(26, 26, 218, 0.534);
     height: 100%;
     border-radius: 20px;
-    transition: width 10s 10s ease-in-out;
+    width: 0%;
+    transition: width 3s 2s ease-in-out;
 }
