@@ -5,3 +5,7 @@
     
 }
 
+.skills-set{
+    transition: width 1s ;
+    text-align: center;
+}
