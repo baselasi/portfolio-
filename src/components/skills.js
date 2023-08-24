@@ -49,75 +49,38 @@ export default function Skills(){
                 <ScrollTrigger onExit={()=>this.changeTitleWidth(this.titleWidth)} onEnter={()=>this.changeTitleWidth(this.titleWidth)}>
                     <h2 className="border-bottom  skills-set"  style={{width:`${widths.firstTtitle}%`}}>{title}</h2>
                 </ScrollTrigger>
-                <div className=" row " >
-                    {data.programnigSkills.map((skill)=>{
+                <div className=" row  " >
+                    {data.map((skill)=>{
                     return(
-                        <div className="  col-md-4 d-flex flex-column justify-content-center align-items-center">
+                        <div className="  col-md-4 d-flex flex justify-content-between align-content-between">
                             <img className="logo " src={skill.logo}></img>
                             <h4>
                             {skill.skill}
-                            
                             </h4>
-                            <ScrollTrigger onEnter={()=>changeWidth(skill,"programing")} style={{width:"100%"}}><div className="continer-skill"><div  style={{width:`${firstWidth[data.programnigSkills.indexOf(skill)]}%`}} className="skill-level"></div>{skill.competence}%</div></ScrollTrigger>
+                            {skill.competence !==undefined?
+                            <ScrollTrigger onEnter={()=>changeWidth(skill,"programing")} style={{width:"100%"}}>
+                                <div className="continer-skill">
+                                    <div  style={{width:`${firstWidth[data.indexOf(skill)]}%`}} className="skill-level"></div>
+                                    {skill.competence}%
+                                </div>
+                            </ScrollTrigger>
+                            : null}
                         </div>
                     )
                 })}
                 </div>
                 </div>
             )
-           
         }
     }
     const programnigSkills = new Skill ("PROGRAMING SKILLS",widths.firstTtitle)
-        console.log(programnigSkills)
-    console.log(widths)
+    const engineeringSkills = new Skill ("ENGINERING SKILLS",widths.secondTitle)
+    const softSkills = new Skill ("SOFT SKILLS",1)
     return(
-        <ScrollContainer>
-        <section className="h-100">
-            {programnigSkills.renderContent(data)}
-            <div onEnter={()=>console.log("sas")} className="container">
-                <ScrollTrigger onEnter={()=>console.dir(event.target)}><h2 onClick={()=>console.dir(event.target)} className="border-bottom w-25 text-center" style={{backgroundColor:"white"}}>ENGINERING SKILLS</h2></ScrollTrigger>
-                <div className=" row">
-                    {data.engineeringSkills.map((skill)=>{
-                        return(
-                            <div onClick={()=>console.dir(event.target)} className="  col-md-4 d-flex flex-column justify-content-center align-items-center">
-                                <img className="logo " src={skill.logo}></img>
-                                <h4>
-                                {skill.skill}
-                                </h4>
-                                <ScrollTrigger onEnter={()=>changeWidth(skill,"enginering")} style={{width:"100%"}}>
-                                    <div className="continer-skill">
-                                        <div  style={{width:`${secondWidth[data.engineeringSkills.indexOf(skill)]}%`}} className="skill-level"></div>
-                                        {skill.competence}%
-                                    </div>
-                                </ScrollTrigger>
-                                
-                            </div>
-                        )
-                    })}
-                </div>
-            </div>
-            <div className="container">
-                <h2 className="border-bottom w-25 text-center">SOFT SKILLS</h2>
-                <div className=" row">
-                    {data.softSkills.map((skill)=>{
-                        return(
-                            <div className="  col-md-4 d-flex flex-column justify-content-center align-items-center">
-                                <img className="logo " src={skill.logo}></img>
-                                <h4 >
-                                {skill.skill}
-                                </h4>
-                            </div>
-                        )
-                    })}
-                </div>
-            </div>
-            <div>
-
-            </div>
-            
-
+        <section className="h-100 flex justify-content-between align-content-between">
+            {programnigSkills.renderContent(data.programnigSkills)}
+            {engineeringSkills.renderContent(data.engineeringSkills)}
+            {softSkills.renderContent(data.softSkills)}
         </section>
-        </ScrollContainer>
     )
 }
