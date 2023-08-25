@@ -6,17 +6,18 @@
     box-sizing: border-box;
 }
 .continer-skill{
-    width: 80%;
+    width: 60%;
     height: 20px;
-    background-color: antiquewhite;
+    background-color: rgb(255, 210, 210);
     border-radius: 20px;
     text-align: right;
     padding-right: 5%;
     display: flex;
     justify-content: space-between;
+    align-self: center;
 }
 .skill-level{
-    background-color: rgba(26, 26, 218, 0.534);
+    background-color: rgb(0, 0, 255);
     height: 100%;
     border-radius: 20px;
     width: 0%;
