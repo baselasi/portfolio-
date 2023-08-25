@@ -2,10 +2,30 @@
   
     height: 60px;
     width: 60px;
+    animation: rotation 7s infinite ;
+
     
+}
+@keyframes rotation {
+    from {
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(360deg);
+    }
+}
+.rotate{
 }
 
 .skills-set{
     transition: width 1s ;
     text-align: center;
+}
+.skill_continer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
