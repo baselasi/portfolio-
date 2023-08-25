@@ -32,12 +32,9 @@ export default function Skills(){
             {
                 case 25:
                     widths.firstTtitle= 100
-                    console.log(this.titleWidth)
-                    console.log(width)
                     break;
                 case 100:
                     widths.firstTtitle = 25
-                    console.log("s")
                     break;
                 default:
                     console.log("err")
@@ -52,8 +49,8 @@ export default function Skills(){
                 <div className=" row  " >
                     {data.map((skill)=>{
                     return(
-                        <div className="  col-md-4 d-flex flex justify-content-between align-content-between">
-                            <img className="logo " src={skill.logo}></img>
+                        <div className="  col-md-4 skill_continer ">
+                            <img className="logo " style={{animationDelay:`${data.indexOf(skill) +5}s`}} src={skill.logo}></img>
                             <h4>
                             {skill.skill}
                             </h4>
@@ -77,7 +74,7 @@ export default function Skills(){
     const engineeringSkills = new Skill ("ENGINERING SKILLS",widths.secondTitle)
     const softSkills = new Skill ("SOFT SKILLS",1)
     return(
-        <section className="h-100 flex justify-content-between align-content-between">
+        <section className=" flex justify-content-between align-content-between">
             {programnigSkills.renderContent(data.programnigSkills)}
             {engineeringSkills.renderContent(data.engineeringSkills)}
             {softSkills.renderContent(data.softSkills)}
