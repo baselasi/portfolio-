@@ -15,3 +15,6 @@ html,body{
     background-position: center;
     background-size: cover;
 }
+html{
+    overflow: auto;
+}
