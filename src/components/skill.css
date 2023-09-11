@@ -20,6 +20,11 @@
 .skills-set{
     transition: width 1s ;
     text-align: center;
+    width: 25%;
+}
+.skill-level{
+    background-color: blue;
+    transition: background-color 2s;
 }
 .skill_continer{
     display:flex;
@@ -28,4 +33,7 @@
     align-items: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
+}
+.hide{
+    width:100%;
 }
