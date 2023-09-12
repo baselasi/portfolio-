@@ -37,3 +37,6 @@
 .hide{
     width:100%;
 }
+.show{
+    display: block;
+}
