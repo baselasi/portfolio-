@@ -15,6 +15,7 @@
     display: flex;
     justify-content: space-between;
     align-self: center;
+    display: block;
 }
 .skill-level{
     background-color: rgb(0, 0, 255);
