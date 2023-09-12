@@ -2,62 +2,58 @@ import React, { useEffect, useRef, useState } from "react";
 import data from "../data";
 import "./skill.css"
 export default function Skills(){
-    
     const [widths,setWidths] = useState({
         firstTtitle: 25,
         secondTitle: 0,
         thierdTitle: 0
         })
-    const [isInSite, setIsInsite] = useState([false,false,false])
+    const [isInSite, setIsInsite] = useState([false,false])
+    const [skillsEntries,setSkillsEntries] = useState([])
     useEffect(()=>{
         const observer = new IntersectionObserver((entries)=>{
             entries.forEach((entrie)=>{
                     entrie.target.classList.toggle("hide",entrie.isIntersecting)
-                    console.log(entrie)
-                    console.log(isInSite)
             })
-            
         })
-        const observeCotiner = new IntersectionObserver((entries)=>
+        const observeCotiner = new IntersectionObserver((entries)=>{
+            setSkillsEntries(entries)
+            console.log("state",skillsEntries)
             entries.forEach((entrie)=>{
-                let newarr = isInSite.map((el)=>{
-                    if(isInSite.indexOf(el)=== entries.indexOf(entrie)){
-                      return entrie.isIntersecting
+                entrie.target.classList.toggle("continer-skill",entrie.isIntersecting)
+                let i = -1
+                let newarr = []
+                isInSite.forEach((el)=>{
+                    debugger
+                    i++
+                    if(entrie.target.accessKey == i ){
+                        newarr[i] = entrie.isIntersecting
                     }
+                   else{
+                    newarr[i] = el
+                   }
+
+
                 })
-                console.log(newarr)
                 setIsInsite(newarr)
+                console.log("newarr",newarr)
+                console.log("inssite",isInSite)
             })
-        )
+        })
         headers.forEach((header)=> observer.observe(header))
-        console.log(skillLevels)
         skillLevels.forEach((skill)=>observeCotiner.observe(skill))
-       // console.log(headers)
         //console.log(div.current)
        
     },[])
     let headers = []
     let skillLevels = []
+
     class Skill {
+        static index = -1
         static count = -1
         constructor (title, width){
-            this.index = ++Skill.count
+            this.index = ++Skill.index
             this.titile = title
             this.titleWidth = width
-            this.changeTitleWidth = (x)=>{
-                debugger
-                switch(x)
-                {
-                    case 25:
-                        widths.firstTtitle= 100
-                        break;
-                    case 100:
-                        widths.firstTtitle = 25
-                        break;
-                    default:
-                        console.log("err")
-                }
-            }
             this.renderContent = (data)=>{
                 return(
                     <div className=" container flex-column align-content-around">
@@ -66,15 +62,16 @@ export default function Skills(){
                     
                         <div  className=" row  " >
                             {data.map((skill)=>{
+                            Skill.count++
                             return(
-                                <div className="  col-md-4 skill_continer " ref={(el)=>{skillLevels[this.index]=el}}>
+                                <div className="  col-md-4 skill_continer " >
                                     <img className="logo " style={{animationDelay:`${data.indexOf(skill) +5}s`}} src={skill.logo}></img>
                                     <h4 >
                                     {skill.skill}
                                     </h4>
                                     {skill.competence !==undefined?
-                                        <div  className="continer-skill">
-                                            <div  style={{width:`${skill.competence}%`}} className="skill-level" ></div>
+                                        <div accessKey={this.index}  ref={(el)=>skillLevels[this.index]=el} className="show" >
+                                            <div key={data.indexOf(skill)} style={{width:`${skill.competence}%`}}  ></div>
                                             {skill.competence}%
                                         </div>
                                     : null}
