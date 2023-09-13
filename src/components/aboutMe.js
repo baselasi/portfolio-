@@ -1,6 +1,4 @@
 import React from "react";
-import background1 from "../imgs/img.jpg"
-import Navbar from "./nabar";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./sum.css"
 import data from "../data";
