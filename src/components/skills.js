@@ -2,51 +2,46 @@ import React, { useEffect, useRef, useState } from "react";
 import data from "../data";
 import "./skill.css"
 export default function Skills(){
+    const [isInSite, setIsInsite] = useState(["w",false])
+
     const [widths,setWidths] = useState({
         firstTtitle: 25,
         secondTitle: 0,
         thierdTitle: 0
         })
-    const [isInSite, setIsInsite] = useState([false,false])
     const [skillsEntries,setSkillsEntries] = useState([])
+    console.log("isinsite",isInSite)
+    
     useEffect(()=>{
+        newarr=isInSite
         const observer = new IntersectionObserver((entries)=>{
             entries.forEach((entrie)=>{
                     entrie.target.classList.toggle("hide",entrie.isIntersecting)
             })
         })
         const observeCotiner = new IntersectionObserver((entries)=>{
-            setSkillsEntries(entries)
-            console.log("state",skillsEntries)
             entries.forEach((entrie)=>{
                 entrie.target.classList.toggle("continer-skill",entrie.isIntersecting)
                 let i = -1
-                let newarr = []
-                isInSite.forEach((el)=>{
-                    debugger
+                newarr.map((el)=>{
                     i++
                     if(entrie.target.accessKey == i ){
-                        newarr[i] = entrie.isIntersecting
+                        return entrie.isIntersecting
                     }
                    else{
-                    newarr[i] = el
+                    return el
                    }
-
-
                 })
-                setIsInsite(newarr)
                 console.log("newarr",newarr)
-                console.log("inssite",isInSite)
             })
         })
         headers.forEach((header)=> observer.observe(header))
         skillLevels.forEach((skill)=>observeCotiner.observe(skill))
-        //console.log(div.current)
-       
     },[])
+    let newarr = []
+
     let headers = []
     let skillLevels = []
-
     class Skill {
         static index = -1
         static count = -1
@@ -79,6 +74,7 @@ export default function Skills(){
                             )
                         })}
                         </div>
+                        {isInSite[0]}
                     </div>
                     
                 
