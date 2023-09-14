@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import data from "../data";
 import "./skill.css"
+import"./resume.css"
 export default function Skills(){
     const [isInSite, setIsInsite] = useState(["w",false])
 
@@ -16,14 +17,17 @@ export default function Skills(){
         newarr=isInSite
         const observer = new IntersectionObserver((entries)=>{
             entries.forEach((entrie)=>{
-                    entrie.target.classList.toggle("hide",entrie.isIntersecting)
+                    let isShowing = !entrie.isIntersecting
+                    entrie.target.classList.toggle("show",entrie.isIntersecting)
+                    entrie.target.classList.toggle("hide",isShowing)
+
             })
         })
         const observeCotiner = new IntersectionObserver((entries)=>{
             entries.forEach((entrie)=>{
                 entrie.target.classList.toggle("continer-skill",entrie.isIntersecting)
                 let i = -1
-                newarr.map((el)=>{
+                newarr = newarr.map((el)=>{
                     i++
                     if(entrie.target.accessKey == i ){
                         return entrie.isIntersecting
@@ -33,6 +37,7 @@ export default function Skills(){
                    }
                 })
                 console.log("newarr",newarr)
+                setIsInsite(newarr)
             })
         })
         headers.forEach((header)=> observer.observe(header))
@@ -53,7 +58,7 @@ export default function Skills(){
                 return(
                     <div className=" container flex-column align-content-around">
                    
-                        <h2 ref={(el)=>{headers[this.index]=el}} onScroll={()=>this.changeTitleWidth(this.titleWidth)} className="border-bottom h-25 skills-set"  >{title}</h2>
+                        <h2 ref={(el)=>{headers[this.index]=el}} className="border-bottom h-25 skills-set hide" style={{}} >{title}</h2>
                     
                         <div  className=" row  " >
                             {data.map((skill)=>{
@@ -65,8 +70,8 @@ export default function Skills(){
                                     {skill.skill}
                                     </h4>
                                     {skill.competence !==undefined?
-                                        <div accessKey={this.index}  ref={(el)=>skillLevels[this.index]=el} className="show" >
-                                            <div key={data.indexOf(skill)} style={{width:`${skill.competence}%`}}  ></div>
+                                        <div accessKey={this.index}  ref={(el)=>skillLevels[this.index]=el} className="continer-skill" >
+                                            <div key={data.indexOf(skill)} style={{width: isInSite[this.index] ? `${skill.competence}% ` : "0%"}} className="skill-level" ></div>
                                             {skill.competence}%
                                         </div>
                                     : null}
