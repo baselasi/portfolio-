@@ -18,14 +18,11 @@
 }
 
 .skills-set{
-    transition: width 1s ;
+    transition: width 4s ,opacity 2s;
     text-align: center;
     width: 25%;
 }
-.skill-level{
-    background-color: blue;
-    transition: background-color 2s;
-}
+
 .skill_continer{
     display:flex;
     flex-direction: column;
@@ -33,10 +30,12 @@
     align-items: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
-}
-.hide{
-    width:100%;
+   
 }
 .show{
+    width:100%;
     display: block;
+}
+.hide{
+    opacity: 0;
 }
