@@ -6,7 +6,6 @@ html,body{
     height: 100%;
 }
 #root{
-    height: 100%;
     width:100%
 }
 .img{
@@ -16,5 +15,4 @@ html,body{
     background-size: cover;
 }
 html{
-    overflow: auto;
 }
