@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import data from "../data";
 import "./skill.css"
 import"./resume.css"
+import "./sum.css"
+
 export default function Skills(){
     const [isInSite, setIsInsite] = useState(["w",false])
 
@@ -11,7 +13,6 @@ export default function Skills(){
         thierdTitle: 0
         })
     const [skillsEntries,setSkillsEntries] = useState([])
-    console.log("isinsite",isInSite)
     
     useEffect(()=>{
         newarr=isInSite
@@ -36,7 +37,6 @@ export default function Skills(){
                     return el
                    }
                 })
-                console.log("newarr",newarr)
                 setIsInsite(newarr)
             })
         })
@@ -56,7 +56,7 @@ export default function Skills(){
             this.titleWidth = width
             this.renderContent = (data)=>{
                 return(
-                    <div className=" container flex-column align-content-around">
+                    <div className=" container flex-column align-content-around" >
                    
                         <h2 ref={(el)=>{headers[this.index]=el}} className="border-bottom h-25 skills-set hide" style={{}} >{title}</h2>
                     
@@ -66,7 +66,7 @@ export default function Skills(){
                             return(
                                 <div className="  col-md-4 skill_continer " >
                                     <img className="logo " style={{animationDelay:`${data.indexOf(skill) +5}s`}} src={skill.logo}></img>
-                                    <h4 >
+                                    <h4 className="sticky">
                                     {skill.skill}
                                     </h4>
                                     {skill.competence !==undefined?
@@ -91,7 +91,7 @@ export default function Skills(){
     const engineeringSkills = new Skill ("ENGINERING SKILLS",widths.secondTitle,2)
     const softSkills = new Skill ("SOFT SKILLS",1,3)
     return(
-        <section className=" flex justify-content-between align-content-between">
+        <section className=" flex justify-content-between align-content-between" style={{backgroundColor:"white"}}>
             {programnigSkills.renderContent(data.programnigSkills)}
             {engineeringSkills.renderContent(data.engineeringSkills)}
             {softSkills.renderContent(data.softSkills)}
