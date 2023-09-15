@@ -1,0 +1,9 @@
+.lists{
+    display: flex;
+    justify-content: space-between;
+    color: aquamarine;
+}
+.numbers{
+    display: flex;
+    flex-direction: column;
+}
