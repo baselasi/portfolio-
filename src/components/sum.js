@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import Navbar from "./nabar";
 import AboutMe from "./aboutMe";
 import Skills from "./skills";
+import "./sum.css"
+import BACKGROUND from "./background";
 export default function Sum(){
     //const [hello,setHello] = useState(true)
     //const x = useRef()
@@ -21,9 +23,10 @@ export default function Sum(){
     
         return(
             <>
-                <AboutMe/>
-                <Navbar/>
+                <AboutMe />
+                <Navbar />
                 <Skills/>
+                <BACKGROUND/>
             </>
            
         )
