@@ -23,10 +23,12 @@ export default function Sum(){
     
         return(
             <>
+
                 <AboutMe />
                 <Navbar />
                 <Skills/>
                 <BACKGROUND/>
+
             </>
            
         )
