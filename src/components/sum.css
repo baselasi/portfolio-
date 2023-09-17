@@ -23,8 +23,9 @@
     width: 100%;
 }
 .first-continer{
-    position: relative;
+    position: absolute;
     text-align: center;
+    top: 40%;
 }
 .danger{
     color: red;
