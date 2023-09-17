@@ -1,20 +1,20 @@
-import React, { useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import useInterval from '@use-it/interval'
 
 import "./background.css"
 export default function  BACKGROUND(){
-    useEffect(()=>{
-
-        function change(){
-        console.log(window.innerWidth)
-        }
-        window.addEventListener('resize',change);
-        
-        
+    const [changee,setChange] = useState(true)
+   const [changeOpacity,setOpacity] = useState(1)
+    const  change = useCallback(()=>{
+        setChange(prev=>!prev)
     },[])
-    let x=true
+    useEffect(()=>{
+       
+    },[changee])
+   /*useInterval(()=>{
+    setOpacity((prev)=>prev++)
+},(1000))*/
     let numbers = []
-    let array = [null,null,null,0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]
-  
     class List{
         static count = -1
         constructor (){
@@ -24,50 +24,47 @@ export default function  BACKGROUND(){
             this.opacity=1
             this.createList= ()=>{
                 for(let i= 0; i<50;i++){
-                  
-                    this.list[i]=Math.floor(Math.random()*10)
-               
+                    this.list[i]=Math.floor(Math.random()*2)
                 }
             }
             this.renderList = ()=>{
                 let i=-1
-              return (
-                
-                this.list.map((number)=>{
-                i++
-                  
-                    if(i>this.start+5 || i<this.start-5){
-                        return(
-                            <span style={{opacity:"0"}}>{number}</span>
-                        )
-                    }
-                    else{
-                        return(
-                            <span style={{opacity:`${this.opacity}`}}>{number}</span>
-                        )
-                    }
-                   
-                    
-                    
-                   })
-              )
-            
+                    return (
+                        
+                        this.list.map((number)=>{
+                            i++
+                            if(i>this.start){
+                                return(
+                                    <span style={{opacity: changeOpacity %2==0 ? "0" : "1"}} >{number}</span>
+                                )
+                            }
+                            else if(0<i<this.start){
+                                return(
+                                    <span style={{opacity: changeOpacity %2==0? "1" : "0"}} >{number}</span>
+                                )
+                            }
+                            else{
+                                return(
+                                    <span style={{opacity:`${1}`}} >{number}</span>
+                                )
+                            }
+                           })
+                      )
+             
             }
-            this.changeOpacity = (n)=>{
-                console.log(n)
-                if(this.start<50){
-                    this.start++
-                   }
-                   else if(this.start===49){
-                    this.start=0
-                   }
-                   this.renderList()
+            this.changeOpacity = ()=>{
+                useInterval(()=>{
+                    console.log("w")
+                    if(this.start<50){
+                        this.start++
+                    }
+                    else if(this.start===49){
+                        this.start=0
+                    }
+                },(1000))
                }
-            
-
         }
     }
-    
     for(let i=0;i<70;i++){
         let x
         x=new List
@@ -78,17 +75,15 @@ export default function  BACKGROUND(){
         return(
             numbers.map((list)=>{
                 return (
-                <div className="numbers" onMouseEnter={()=>list.changeOpacity(event.target)} >
+                <div className="numbers"   >
                     {list.renderList()}
                 </div>)
                 
             })
         )
-       
     }
-    console.log(numbers)
     return(
-        <div   className="lists">
+        <div   className="lists " style={{backgroundColor:"black"}} >
             {renderCntent()}
         </div>
     )
