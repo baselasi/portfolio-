@@ -1,7 +1,7 @@
 .lists{
     display: flex;
     justify-content: space-between;
-    color: aquamarine;
+    color: hsl(118, 100%, 50%);
 }
 .numbers{
     display: flex;
