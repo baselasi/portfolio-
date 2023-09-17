@@ -6,14 +6,11 @@ import "./sum.css"
 
 export default function Skills(){
     const [isInSite, setIsInsite] = useState(["w",false])
-
     const [widths,setWidths] = useState({
         firstTtitle: 25,
         secondTitle: 0,
         thierdTitle: 0
         })
-    const [skillsEntries,setSkillsEntries] = useState([])
-    
     useEffect(()=>{
         newarr=isInSite
         const observer = new IntersectionObserver((entries)=>{
@@ -21,7 +18,6 @@ export default function Skills(){
                     let isShowing = !entrie.isIntersecting
                     entrie.target.classList.toggle("show",entrie.isIntersecting)
                     entrie.target.classList.toggle("hide",isShowing)
-
             })
         })
         const observeCotiner = new IntersectionObserver((entries)=>{
@@ -44,7 +40,6 @@ export default function Skills(){
         skillLevels.forEach((skill)=>observeCotiner.observe(skill))
     },[])
     let newarr = []
-
     let headers = []
     let skillLevels = []
     class Skill {
@@ -57,10 +52,8 @@ export default function Skills(){
             this.renderContent = (data)=>{
                 return(
                     <div className=" container flex-column align-content-around" >
-                   
                         <h2 ref={(el)=>{headers[this.index]=el}} className="border-bottom h-25 skills-set hide" style={{}} >{title}</h2>
-                    
-                        <div  className=" row  " >
+                        <div  className="row">
                             {data.map((skill)=>{
                             Skill.count++
                             return(
@@ -81,8 +74,6 @@ export default function Skills(){
                         </div>
                         {isInSite[0]}
                     </div>
-                    
-                
                 )
             }
         }
@@ -91,7 +82,7 @@ export default function Skills(){
     const engineeringSkills = new Skill ("ENGINERING SKILLS",widths.secondTitle,2)
     const softSkills = new Skill ("SOFT SKILLS",1,3)
     return(
-        <section className=" flex justify-content-between align-content-between" style={{backgroundColor:"white"}}>
+        <section className=" flex justify-content-between align-content-between" style={{backgroundColor:"white",zIndex:"1"}} >
             {programnigSkills.renderContent(data.programnigSkills)}
             {engineeringSkills.renderContent(data.engineeringSkills)}
             {softSkills.renderContent(data.softSkills)}
