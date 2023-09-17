@@ -12,7 +12,7 @@ export default function Navbar(){
         navigate('/')
     }
     return(
-       <nav className="navbar navbar-expand sticky nav-bar " style={{backgroundColor:"white",top:"0.1px",zIndex:"1"}}>
+       <nav className="navbar navbar-expand sticky nav-bar " style={{backgroundColor:"white",top:"0.1px"}}>
             <div className="container w-100">
                 <ul className="navbar-nav w-100">
                     <li className="nav-item"><button className="nav-link">ABOUT ME</button></li>
