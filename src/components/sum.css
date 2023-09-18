@@ -1,12 +1,7 @@
 .section{
     height: 100vh;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: rgb(255, 255, 255);
     position: relative;
-    top: 10px;
-    background-color: aliceblue;
+    top: 0.10px;
 }
 .flex{
     display: flex;
@@ -22,11 +17,7 @@
     height: 100%;
     width: 100%;
 }
-.first-continer{
-    position: absolute;
-    text-align: center;
-    top: 40%;
-}
+
 .danger{
     color: red;
 }
