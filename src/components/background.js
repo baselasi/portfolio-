@@ -75,7 +75,7 @@ export default function  BACKGROUND(){
         return(
             numbers.map((list)=>{
                 return (
-                <div className="numbers"   >
+                <div className="numbers" onMouseEnter={change}  >
                     {list.renderList()}
                 </div>)
                 
@@ -83,7 +83,7 @@ export default function  BACKGROUND(){
         )
     }
     return(
-        <div   className="lists " style={{backgroundColor:"black"}} >
+        <div   className="lists sticky " style={{backgroundColor:"black"}} >
             {renderCntent()}
         </div>
     )
