@@ -63,7 +63,7 @@ export default function Skills(){
                                     {skill.skill}
                                     </h4>
                                     {skill.competence !==undefined?
-                                        <div accessKey={this.index}  ref={(el)=>skillLevels[this.index]=el} className="continer-skill" >
+                                        <div accessKey={this.index}  ref={(el)=>skillLevels[this.index]=el} className="continer-skill" style={{opacity: isInSite[this.index] ? `1` : "0"}}>
                                             <div key={data.indexOf(skill)} style={{width: isInSite[this.index] ? `${skill.competence}% ` : "0%"}} className="skill-level" ></div>
                                             {skill.competence}%
                                         </div>
@@ -82,7 +82,7 @@ export default function Skills(){
     const engineeringSkills = new Skill ("ENGINERING SKILLS",widths.secondTitle,2)
     const softSkills = new Skill ("SOFT SKILLS",1,3)
     return(
-        <section className=" flex justify-content-between align-content-between" style={{backgroundColor:"white",zIndex:"1"}} >
+        <section className=" flex justify-content-between align-content-between " style={{backgroundColor:"rgb(255, 255, 255)",color:"rgb(20, 33, 61)"}} >
             {programnigSkills.renderContent(data.programnigSkills)}
             {engineeringSkills.renderContent(data.engineeringSkills)}
             {softSkills.renderContent(data.softSkills)}
