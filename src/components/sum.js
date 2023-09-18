@@ -3,6 +3,7 @@ import Navbar from "./nabar";
 import AboutMe from "./aboutMe";
 import Skills from "./skills";
 import "./sum.css"
+import About from "./about";
 import BACKGROUND from "./background";
 export default function Sum(){
     //const [hello,setHello] = useState(true)
@@ -23,9 +24,9 @@ export default function Sum(){
     
         return(
             <>
-
                 <AboutMe />
                 <Navbar />
+                <About/>
                 <Skills/>
                 <BACKGROUND/>
 
