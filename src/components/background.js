@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import useInterval from '@use-it/interval'
-
 import "./background.css"
 export default function  BACKGROUND(){
     const [changee,setChange] = useState(true)
@@ -50,7 +49,6 @@ export default function  BACKGROUND(){
                             }
                            })
                       )
-             
             }
             this.changeOpacity = ()=>{
                 useInterval(()=>{
