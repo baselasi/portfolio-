@@ -16,3 +16,9 @@ html,body{
 }
 html{
 }
+.navbar{
+    position: sticky;
+    transition: opacity 2s;
+    background-color: rgb(71, 75, 79);
+    top: 0.1px;
+}
