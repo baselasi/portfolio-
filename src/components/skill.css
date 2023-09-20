@@ -14,11 +14,6 @@
         transform: rotateY(360deg);
     }
 }*/
-.rotate{
-}
-@keyframes changeOpacity {
-    
-}
 .skills-set{
     transition: width 4s ,opacity 2s;
     text-align: center;
