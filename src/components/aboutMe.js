@@ -4,7 +4,7 @@ import "./sum.css"
 import data from "../data";
 import "./background.css"
 
-export default function AboutMe(){
+export default function AboutMe(props){
     const [changee,setChange] = useState(true)
    const [changeOpacity,setOpacity] = useState(1)
     const  change = useCallback(()=>{
@@ -51,8 +51,7 @@ export default function AboutMe(){
                       )
              
             }
-            this.changeOpacity = (n)=>{
-                console.log(n)
+            this.changeOpacity = (n)=>{ ///asasas
                 if(this.start<50){
                     this.start++
                    }
@@ -85,17 +84,29 @@ export default function AboutMe(){
             </div>*/
     return(
     <>
-        <div className="empty-div" style={{height:"100%",width:"25%",left:"0%"}} onMouseMove={change}></div>
-        <div className="empty-div" style={{height:"100%",width:"41.66%",left:"25%"}}onMouseEnter={bringback}></div>
-        <div className="empty-div" style={{height:"100%",width:"29.16%",left:"66.66%"}} onMouseMove={change}></div>
+        <div className="empty-div" style={{height:"100%",width:"5%",left:"0%"}} onMouseMove={change}></div>
+        <div className="empty-div" style={{height:"100%",width:"5%",left:"5%"}} ></div>
+        <div className="empty-div" style={{height:"100%",width:"5%",left:"10%"}} onMouseMove={change}></div>
+        <div className="empty-div" style={{height:"100%",width:"5%",left:"15%"}} ></div>
+
+        <div className="empty-div" style={{height:"100%",width:"5%",left:"20%"}} onMouseMove={change}></div>
+
+        <div className="empty-div flex-box-column" style={{height:"100%",width:"50%",left:"25%",justifyContent:"flex-end"}}onMouseEnter={bringback}>
+            <button style={{opacity:props.showButton[0] ? "0" : "1" }} className="btn " >HIT ME UP</button>
+        </div>
+        <div className="empty-div" style={{height:"100%",width:"5%",left:"75%"}} onMouseMove={change}></div>
+        <div className="empty-div" style={{height:"100%",width:"5%",left:"80%"}} onMouseMove={change}></div>
+        <div className="empty-div" style={{height:"100%",width:"5%",left:"85%"}} onMouseMove={change}></div>
+        <div className="empty-div" style={{height:"100%",width:"5%",left:"90%"}} onMouseMove={change}></div>
+        <div className="empty-div" style={{height:"100%",width:"5%",left:"95%"}} onMouseMove={change}></div>
 
         <section  className=" section  row align-content-center sticky" style={{zIndex:"-1",color:"rgb(15, 98, 146)"}} >
             <div   className="lists" style={{backgroundColor:"black"}}>
                     {renderCntent()}
             </div>
-            <div className="first-continer col-sm-5 intro " >
-                <h1 className="h2 h-25 flex-box-column" style={{color:changee ? "rgba(239, 255, 251,0.70)":"white",fontSize:changee ? "34px": "25px"}}><span className=" ">{changee ? "Hello I'm ": "01101000  01101100 01101111"}<br></br><span>{changee ? "Bassel Assi ": "01101000  01101100 01101111"}</span></span><br></br> {changee ? "Frontend Devoloper / Process And Material Engineer ": "01101000  01101100 01101111 01101000 01101111"}</h1>
-                <button className="btn " >HIT ME UP</button>
+            <div className="first-continer col-6 intro " >
+                <h1 className="h2 h-25 flex-box-column" style={{color:changee ? "rgb(232, 249, 253)":"green",fontSize:changee ? "34px": "25px"}}><span className=" ">{changee ? "Hello I'm ": "01101000  01101100 01101111"}<br></br><span>{changee ? "Bassel Assi ": "01101000  01101100 01101111"}</span></span><br></br> {changee ? "Frontend Devoloper / Process And Material Engineer ": "01101000  01101100 01101111 01101000 01101111"}</h1>
+                <div></div>
             </div>
                 
         </section>
