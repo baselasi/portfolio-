@@ -6,6 +6,7 @@
 .numbers{
     display: flex;
     flex-direction: column;
+    
 }
 .empty-div{
     position: absolute;
