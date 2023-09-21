@@ -82,7 +82,7 @@ export default function Skills(){
     const engineeringSkills = new Skill ("ENGINERING SKILLS",widths.secondTitle,2)
     const softSkills = new Skill ("SOFT SKILLS",1,3)
     return(
-        <section className=" flex justify-content-between align-content-between " style={{backgroundColor:"rgb(255, 255, 255)",color:"rgb(20, 33, 61)"}} >
+        <section className=" flex justify-content-between align-content-between marging-padding border-bottom border-5 border-primary" style={{backgroundColor:"rgb(248, 246, 244)",color:"rgb(20, 33, 61)"}} >
             {programnigSkills.renderContent(data.programnigSkills)}
             {engineeringSkills.renderContent(data.engineeringSkills)}
             {softSkills.renderContent(data.softSkills)}
