@@ -12,7 +12,7 @@ export default function Navbar(props){
     useEffect(()=>{
         const observer = new IntersectionObserver((entries)=>{
             entries.forEach((entrie)=>{
-                    props.setButtonOpacity([entrie.isIntersecting])
+                    props.setButtonOpacity(!entrie.isIntersecting)
                     setShow(entrie.isIntersecting)
             })
         })
