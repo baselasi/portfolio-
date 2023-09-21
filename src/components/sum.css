@@ -2,6 +2,14 @@
     height: 100vh;
     position: relative;
     top: 0.10px;
+   
+}
+.marging-padding{
+    padding-bottom: 10%;
+    padding-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-image: linear-gradient(to right, transparent 0%, blue 50%,transparent 100%) 100% 1;
 }
 .flex{
     display: flex;
