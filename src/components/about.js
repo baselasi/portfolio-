@@ -4,14 +4,17 @@ import data from "../data";
 
 export default function About(){
     return(
-        <section className="row"  style={{backgroundColor:"rgb(255, 255, 255)",color:"rgb(20, 33, 61)"}}>
-            <h2 className="col-sm-4">WHO <br></br>AM I?</h2>
-            <div className="col-sm-8" >
+        <section className="flex justify-content-center marging-padding border-bottom border-5 border-primary"   style={{backgroundColor:"rgb(248, 246, 244)",color:"rgb(20, 33, 61)",marginTop:"0"}}>
+           <div className="row col-12">
+           <h2 className="col-sm-3" style={{fontSize:"45px"}}>WHO AM I?</h2>
+            <div className="col-sm-9" >
                 <p style={{fontSize:"30px"}}>
                     {data.profile}
                 </p>
-                <button><a href="CV Bassel-Assi.pdf" download="cv">download</a></button>
+                <button className="col-3 btn "><a href="CVBassel-Assi.pdf" download="ASSI-BASSEL RESUME" style={{width:"100%"}}>DOWNLOAD RESUME </a></button>
             </div>
+            
+           </div>
             
         </section>
     )
