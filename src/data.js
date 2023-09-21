@@ -14,7 +14,7 @@ export default {
    },
    profile:'i am a process and materials engineer, i got my bachelor degree in industrial engineering ,'+
             'then my a master degree in process and material engineering both from the trieste university, in past years i develop interest in coding and slowly it become a passion, '+
-            'so I decided to pursue a new carrier a programer. i taught myself the basic languages for front-end development (JAVASCRIPT,HTML,CSS,BOOTSTRAP,REACT),',
+            'so I decided to pursue a new carrier a programer. i taught myself the basic languages for front-end development (JAVASCRIPT ,HTML, CSS, BOOTSTRAP, REACT),',
    studies: [
         {
             degree:'Laurea triennale in ingegneria industriale',
