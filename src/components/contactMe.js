@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import emailjs from '@emailjs/browser';
+import "./skill.css"
 
 
 export default function ContactMe(){
@@ -18,11 +19,10 @@ export default function ContactMe(){
     }
 
     return(
-        <section style={{backgroundColor:"rgb(255, 255, 255"}} className="row">
-            <div className="col-sm-6">
-
-            </div>
-            <form className="col-sm-6" ref={form} onSubmit={sendEmail} >
+        <section style={{backgroundColor:"rgb(248, 246, 244)"}} className=" flex justify-content-center marging-padding">
+            <div className="col-sm-8 row">
+            <h2 className="col-md-6">HIT ME UP</h2>
+            <form className="col-md-6" ref={form} onSubmit={sendEmail} >
                 <div class="form-group">
                     <label for="name" >Name</label>
                     <input type="text" name="name" class="form-control" id="name"  placeholder="enter name"></input>
@@ -37,6 +37,11 @@ export default function ContactMe(){
                 
             
             </form>
+            </div>
+            <div className="col-sm-6">
+                
+            </div>
+
         </section>
     )
 }
