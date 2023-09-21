@@ -7,12 +7,21 @@ import "./background.css"
 export default function AboutMe(props){
     const [changee,setChange] = useState(true)
    const [changeOpacity,setOpacity] = useState(1)
+   const [dinamicaIntro,setIntro] = useState(false)
     const  change = useCallback(()=>{
         setChange((prev)=>!prev)
     },[])
     function bringback(){
         setChange(true)
     }
+    useEffect(()=>{
+        if(!props.showButton && window.innerWidth>980){
+            setIntro(true)
+        }
+        else{
+            setIntro(false)
+        }
+    },[props.showButton,window.innerWidth])
     let numbers = []
     class List{
         static count = -1
@@ -92,7 +101,7 @@ export default function AboutMe(props){
         <div className="empty-div" style={{height:"100%",width:"5%",left:"20%"}} onMouseMove={change}></div>
 
         <div className="empty-div flex-box-column" style={{height:"100%",width:"50%",left:"25%",justifyContent:"flex-end"}}onMouseEnter={bringback}>
-            <button style={{opacity:props.showButton[0] ? "0" : "1" }} className="btn " >HIT ME UP</button>
+            <button style={{opacity:dinamicaIntro ? "0" : "1" }} className="btn " >HIT ME UP</button>
         </div>
         <div className="empty-div" style={{height:"100%",width:"5%",left:"75%"}} onMouseMove={change}></div>
         <div className="empty-div" style={{height:"100%",width:"5%",left:"80%"}} onMouseMove={change}></div>
@@ -100,12 +109,12 @@ export default function AboutMe(props){
         <div className="empty-div" style={{height:"100%",width:"5%",left:"90%"}} onMouseMove={change}></div>
         <div className="empty-div" style={{height:"100%",width:"5%",left:"95%"}} onMouseMove={change}></div>
 
-        <section  className=" section  row align-content-center sticky" style={{zIndex:"-1",color:"rgb(15, 98, 146)"}} >
+        <section  className=" section  row align-content-center sticky " style={{zIndex:"-1",color:"rgb(15, 98, 146)"}} >
             <div   className="lists" style={{backgroundColor:"black"}}>
                     {renderCntent()}
             </div>
             <div className="first-continer col-6 intro " >
-                <h1 className="h2 h-25 flex-box-column" style={{color:changee ? "rgb(232, 249, 253)":"green",fontSize:changee ? "34px": "25px"}}><span className=" ">{changee ? "Hello I'm ": "01101000  01101100 01101111"}<br></br><span>{changee ? "Bassel Assi ": "01101000  01101100 01101111"}</span></span><br></br> {changee ? "Frontend Devoloper / Process And Material Engineer ": "01101000  01101100 01101111 01101000 01101111"}</h1>
+                <h1 className="h2 h-25 flex-box-column" style={{color: !dinamicaIntro ? "rgb(232, 249, 253)":"green",fontSize:"55px"}}><span className=" ">{ !dinamicaIntro ? "Hello I'm": "01101000  01101100 01101111"}<br></br><span>{!dinamicaIntro ? "Bassel Assi": "01101000  01101100 01101111"}</span></span><br></br> { !dinamicaIntro ? "Frontend Devoloper / Process And Material Engineer": "01101000  01101100 01101111 01101000 01101111"} </h1>
                 <div></div>
             </div>
                 
