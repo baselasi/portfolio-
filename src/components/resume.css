@@ -50,5 +50,5 @@
     margin-bottom: 10%;
     position: static;
     bottom: 10px;
-    transition: opacity 1s;
+    transition: opacity 0.1s;
 }
