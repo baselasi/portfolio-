@@ -6,7 +6,7 @@ import Skills from './components/skills';
 import ContactMe from './components/contactMe';
 import backround from './imgs/white-backround.jpg'
 import { useState } from 'react';
-import   Projects from './components/projects';
+import Projects from './components/projects';
 function App() {
   const [showButton,setButton] = useState(true)
   return (
