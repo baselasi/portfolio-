@@ -1,0 +1,19 @@
+.projects{
+    display: grid;
+    overflow-x: auto;
+    grid-auto-flow: column;
+    height: 70%;
+    column-gap: 10rem;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cover{
+    background-size: cover;
+    height: 500px;
+    width: 300px;
+    background-repeat: no-repeat;
+}
