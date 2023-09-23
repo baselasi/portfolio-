@@ -52,7 +52,7 @@ export default function Skills(){
             this.renderContent = (data)=>{
                 return(
                     <div className=" container flex-column align-content-around" >
-                        <h2 ref={(el)=>{headers[this.index]=el}} className="border-bottom h-25 skills-set hide" style={{}} >{title}</h2>
+                        <h2 ref={(el)=>{headers[this.index]=el}} className="border-bottom h-25 skills-set hide" style={{color:"green"}} >{title}</h2>
                         <div  className="row">
                             {data.map((skill)=>{
                             Skill.count++
