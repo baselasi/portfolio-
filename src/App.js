@@ -4,13 +4,18 @@ import About from './components/about';
 import Navbar from './components/nabar';
 import Skills from './components/skills';
 import ContactMe from './components/contactMe';
-import backround from './imgs/white-backround.jpg'
 import { useState } from 'react';
 import Projects from './components/projects';
 function App() {
   const [showButton,setButton] = useState(true)
+  const [showModal,setModal] = useState(false)
+  console.log(showModal)
+  function hideModal(){
+    if(showModal){
+    setModal(false)
+    }
+  }
   return (
-    
     <>
       <AboutMe 
         showButton={showButton}
@@ -18,10 +23,13 @@ function App() {
       <Navbar 
         setButtonOpacity={setButton}
       />
-      <div className='main' style={{backgroundImage:`${backround}`}}>
+      <div className='main' style={{backgroundColor:"black"}} onClick={()=>hideModal()}>
         <About/>
         <Skills/>
-        <Projects/>
+        <Projects
+          setModal={setModal}
+          modalState={showModal}
+        />
         <ContactMe/>
       </div>
       
