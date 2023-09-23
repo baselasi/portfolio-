@@ -4,6 +4,9 @@
     grid-auto-flow: column;
     height: 70%;
     column-gap: 10rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    overflow: hidden
 }
 .flex{
     display: flex;
@@ -16,4 +19,28 @@
     height: 500px;
     width: 300px;
     background-repeat: no-repeat;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 2rem;
+    font-size: large;
+    font-weight: bolder;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.round-btn{
+    height:10%;
+    
+    top: 30%;
+    font-size:25px;
+    font-weight: bolder;
+    border-width: medium;
+    color: rgb(102, 255, 0);
+    padding-bottom: 0.5rem;
+    filter: blur(0.5px);
+}
+.discription{
+    position: absolute;
+    width: 94%;
+    height: 100%;
+    left: 3%;
+    top: 0%;
 }
