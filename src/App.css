@@ -39,6 +39,7 @@ body {
   opacity: 1;
   transition: opacity 3s;
   scroll-snap-type: y mandatory;
+  color: rgb(102, 255, 0);
 }
 @keyframes App-logo-spin {
   from {
