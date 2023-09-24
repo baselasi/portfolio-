@@ -12,9 +12,10 @@ export default {
             competenza in javascript, css,html, react, Bootstrap e object-oriented-programing. Sono una
             persona seria con una grande capacità di adattamento e la voglia di imparare. Cerco la mia prima esperienza per fare partire la mia carriera.`
    },
-   profile:'i am a process and materials engineer, i got my bachelor degree in industrial engineering ,'+
-            'then my a master degree in process and material engineering both from the trieste university, in past years i develop interest in coding and slowly it become a passion, '+
-            'so I decided to pursue a new carrier a programer. i taught myself the basic languages for front-end development (JAVASCRIPT ,HTML, CSS, BOOTSTRAP, REACT),',
+   profile:'I am a process and materials engineer, i got my bachelor degree in industrial engineering, '+
+            'then my a master degree in process and material engineering both from Trieste university. During my studies years i develop a interest in coding, and the intrest slowly become a passion, '+
+            'so I decided to pursue a new carrier as programer. I taught myself how to code using the basic languages for front-end development (JAVASCRIPT ,HTML, CSS, BOOTSTRAP, REACT)'+
+            '',
    studies: [
         {
             degree:'Laurea triennale in ingegneria industriale',
