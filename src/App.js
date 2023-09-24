@@ -1,15 +1,14 @@
 import './App.css';
-import AboutMe from './components/aboutMe';
-import About from './components/about';
-import Navbar from './components/nabar';
-import Skills from './components/skills';
-import ContactMe from './components/contactMe';
+import AboutMe from './components/background/background';
+import About from './components/aboutMe/about';
+import Navbar from './components/navbar/nabar';
+import Skills from './components/skills/skills';
+import ContactMe from './components/contact/contactMe';
 import { useState } from 'react';
-import Projects from './components/projects';
+import Footer from './components/footer/footer';
 function App() {
   const [showButton,setButton] = useState(true)
   const [showModal,setModal] = useState(false)
-  console.log(showModal)
   function hideModal(){
     if(showModal){
     setModal(false)
@@ -26,18 +25,11 @@ function App() {
       <div className='main' style={{backgroundColor:"black"}} onClick={()=>hideModal()}>
         <About/>
         <Skills/>
-        <Projects
-          setModal={setModal}
-          modalState={showModal}
-        />
         <ContactMe/>
+        <Footer/>      
+
       </div>
-      
     </>
-    
-      
-    
   );
 }
-
 export default App;
