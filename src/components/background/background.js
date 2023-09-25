@@ -6,6 +6,7 @@ export default function AboutMe(props){
     const [state,setChange]=useState(true)
     const [changeOpacity,setOpacity]=useState(1)
     const [dinamicaIntro,setIntro]=useState(false)
+    const [scrollToContact , setScroll] = useState(false)
     const change = useCallback(()=>{
         setChange((prev)=>!prev)
     },[])
@@ -74,23 +75,22 @@ export default function AboutMe(props){
             })
         )
     }
+    function scrollIntoContact(){
+        setScroll(true)
+        props.scroll(scrollToContact)
+    }
     return(
     <>
         <div className="empty-div" style={{left:"0%"}} onMouseMove={change}></div>
-        <div className="empty-div" style={{left:"5%"}} ></div>
-        <div className="empty-div" style={{left:"10%"}} onMouseMove={change}></div>
-        <div className="empty-div" style={{left:"15%"}} ></div>
-        <div className="empty-div" style={{left:"20%"}} onMouseMove={change}></div>
-                
+       
         <div className="empty-div flex-column align-items-center" style={{width:"50%",left:"25%",justifyContent:"flex-end",display:"flex"}}onMouseEnter={bringback}>
-            <button style={{opacity:dinamicaIntro ? "0" : "1",transition:"opacity ease-out 1s", backgroundColor:"rgba(184, 133, 133, 0.5)" }} className="btn" >HIT ME UP</button>
+            <button style={{opacity:dinamicaIntro ? "0" : "1",transition:"opacity ease-out 1s", backgroundColor:"rgba(155, 189, 168, 0.568)" }} className="btn" onClick={scrollIntoContact}>
+                HIT ME UP
+            </button>
         </div>
         <div className="empty-div" style={{left:"75%"}} onMouseMove={change}></div>
-        <div className="empty-div" style={{left:"80%"}} onMouseMove={change}></div>
-        <div className="empty-div" style={{left:"85%"}} onMouseMove={change}></div>
-        <div className="empty-div" style={{left:"90%"}} onMouseMove={change}></div>
-        <div className="empty-div" style={{left:"95%"}} onMouseMove={change}></div>
-        <section  className=" section  row align-content-center sticky" style={{zIndex:"-1",color:"rgb(15, 98, 146)"}} >
+        
+        <div  className=" section  row align-content-center sticky" style={{zIndex:"-1",color:"rgb(15, 98, 146)"}} >
             <div   className="lists" style={{backgroundColor:"black"}}>
                     {renderCntent()}
             </div>
@@ -100,7 +100,7 @@ export default function AboutMe(props){
                     <br></br> {!dinamicaIntro ? "Frontend Devoloper / Process And Material Engineer": "01101000  01101100 01101111 01101000 01101111"} </h1>
                 <div></div>
             </div>
-        </section>
+        </div>
     </>
     )
 }
