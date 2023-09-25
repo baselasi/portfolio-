@@ -8,11 +8,9 @@ export default function About(){
         },500)})
         observSection.observe(section.current)
     },[])
-    const binaryText="11001010 01101010 10110010 10001011 00101110"
-    const binaryLetter="01100101"
     let section = useRef()
     return(
-        <section ref={section} className=" marging-padding border-bottom border-5 border-primary" style={{marginTop:"0"}}>
+        <div ref={section} className=" marging-padding border-bottom border-5 border-primary" style={{marginTop:"0"}}>
             <div className="row col-12 " style={{color:"rgb(20, 33, 61)"}}>
             <h2 className="col-sm-4" style={{fontSize:"45px",color:sectionIntersction ?"green":"black"}}>
                 { "WHO AM I ?" }
@@ -26,6 +24,8 @@ export default function About(){
                 </button>
             </div>
            </div>
-        </section>
+           <div className='empty-div' style={{top:"99%",width:"10%",position:"absolute",left:"90%"}}></div>
+        <div className='empty-div' style={{top:"99%",width:"10%",position:"absolute"}}></div>
+        </div>
     )
 }
