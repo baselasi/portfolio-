@@ -10,8 +10,8 @@
 }
 .empty-div{
     position: absolute;
-    height: 100%;
-    width: 5%;
+    height: 100vh;
+    width: 25%;
 }
 .intro{
     position: absolute;
