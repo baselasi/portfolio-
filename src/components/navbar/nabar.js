@@ -18,14 +18,17 @@ export default function Navbar(props){
         })
         observer.observe(ref.current)
     },[])
+    function navigate(destination){
+        props. navioageteTo (destination)
+    }
     //const navigate = useNavigate()
     return(
        <nav  className="navbar navbar-expand sticky nav-bar " style={{opacity:isShowing?"0.9":"1",zIndex:"2"}}>
-            <div ref={ref} className="container w-100" >
-                <ul className="navbar-nav w-100" >
-                    <li className="nav-item"><button className="nav-link" style={{color:"rgb(102, 255, 0)"}}>ABOUT ME</button></li>
-                    <li className="nav-item"><button className="nav-link" style={{color:"rgb(102, 255, 0)"}}>RESUME</button></li>
-                    <li className="nav-item"><button className="nav-link" style={{color:"rgb(102, 255, 0)"}}>PROJECTS</button></li>
+            <div ref={ref} className="container " >
+                <ul className="navbar-nav " >
+                    <li className="nav-item"><button className="nav-link" style={{color:"rgb(102, 255, 0)"}} onClick={()=>navigate("aboutME")}>ABOUT ME</button></li>
+                    <li className="nav-item"><button className="nav-link" style={{color:"rgb(102, 255, 0)"}} onClick={()=>navigate("skills")}>SKILLS</button></li>
+                    <li className="nav-item"><button className="nav-link" style={{color:"rgb(102, 255, 0)"}} onClick={()=>navigate("contact")}>CONTACTS</button></li>
                 </ul>
             </div>
        </nav>
