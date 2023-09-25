@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
-export default function ContactMe(){
+export default function ContactMe(props){
     const [sectionIntersction,setSectionIntersction] = useState(false)
     useEffect(()=>{
         const observSection = new IntersectionObserver((entrie)=>{setTimeout (()=>{
@@ -20,8 +20,12 @@ export default function ContactMe(){
           console.log(error.text);
         });
     }
+    if(props.scrollintoView){
+        section.current.scrollIntoView({ behavior: "smooth" ,block: 'nearest', inline: 'center'})
+        props.scroll(false)
+    }
     return(
-        <section ref={section} style={{backgroundColor:"rgb(248, 246, 244)"}} className=" flex justify-content-center marging-padding">
+        <div ref={section} style={{backgroundColor:"rgb(248, 246, 244)"}} className=" flex justify-content-center marging-padding">
             <div className="col-sm-8 row">
             <h2 className="col-md-6">{sectionIntersction?"HIT ME UP":binaryLetter}</h2>
             <form className="col-md-6" ref={form} onSubmit={sendEmail} >
@@ -40,6 +44,6 @@ export default function ContactMe(){
             </div>
             <div className="col-sm-6">
             </div>
-        </section>
+        </div>
     )
 }
