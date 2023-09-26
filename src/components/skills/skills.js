@@ -79,7 +79,6 @@ export default function Skills(){
             }
         }
     }
-    
     const programnigSkills = new Skill ("PROGRAMING SKILLS")
     const engineeringSkills = new Skill ("ENGINERING SKILLS")
     const softSkills = new Skill ("SOFT SKILLS")
