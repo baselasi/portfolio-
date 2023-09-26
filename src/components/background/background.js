@@ -94,7 +94,7 @@ export default function AboutMe(props){
             <div   className="lists" style={{backgroundColor:"black"}}>
                     {renderCntent()}
             </div>
-            <div className="col-6 intro">
+            <div className="col-sm-6 intro">
                 <h1 className=" h-25 flex-box-column title" style={{color: !dinamicaIntro ? "rgb(232, 249, 253)":"green"}}>
                     <span>{!dinamicaIntro ? "Bassel Assi": "01101000  01101100 01101111"}</span>
                     <br></br> {!dinamicaIntro ? "Frontend Devoloper / Process And Material Engineer": "01101000  01101100 01101111 01101000 01101111"} </h1>
