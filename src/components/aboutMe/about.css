@@ -1,0 +1,10 @@
+a{
+    text-decoration: none !important;
+    color: black !important;
+}
+button.download{
+    background-color: rgb(139, 139, 148) !important;
+    height: 2rem;
+    width: 80% !important;
+    text-decoration: none;
+}
