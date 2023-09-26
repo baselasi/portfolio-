@@ -55,9 +55,10 @@ function App() {
         <section ref={aboutMe}><About /></section>
         <section ref={skills}> <Skills/></section>
         <section ref={contact}><ContactMe
-        scrollintoView={scrollIntoContact}
-        scroll={setContact}
-        /></section>
+          scrollintoView={scrollIntoContact}
+          scroll={setContact}
+          />
+        </section>
        <Footer/>      
       </div>
     </>
