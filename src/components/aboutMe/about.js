@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import data from "../../data";
+import "../aboutMe/about.css"
 export default function About(){
     const [sectionIntersction,setSectionIntersction] = useState(false)
     useEffect(()=>{
@@ -16,12 +17,12 @@ export default function About(){
                 { "WHO AM I ?" }
             </h2>
             <div className="col-sm-8" >
-                <p style={{fontSize:"30px",color:  "black"}}>
+                <p className="h2" style={{color:  "black"}}>
                     {data.profile }
                 </p>
-                <button className="col-3 btn ">
-                    <a href="CVBassel-Assi.pdf" download="ASSI-BASSEL RESUME" style={{width:"100%"}}>DOWNLOAD RESUME</a>
-                </button>
+                
+                    <a href="CVBassel-Assi.pdf" download="ASSI-BASSEL RESUME"><button className="col-3 btn download">DOWNLOAD RESUME</button></a>
+                
             </div>
            </div>
            <div className='empty-div' style={{top:"99%",width:"10%",position:"absolute",left:"90%"}}></div>
