@@ -4,6 +4,9 @@
     top: 0.10px;
    
 }
+.btn{
+    height: 50px !important;
+}
 .marging-padding{
     padding-bottom: 10%;
     background-color: rgb(248, 246, 244);
@@ -38,7 +41,7 @@
     background-position: center;
     background-size: contain;
 }
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 576px){
     .main{
         background-color: black;
     }
@@ -51,9 +54,7 @@
     .intro{
         left:0% !important;
     }
-    button.btn{
-        width: 100%  !important;
-    }
+   
     .marging-padding{
         margin-left:0;
         margin-right: 0;
@@ -67,11 +68,16 @@
         height: 50px;
     }
     .btn{
-        height: 50px !important;
         margin-top: 1rem;
    }
    .icons{
     justify-content: space-around !important;
+    width: 100% !important;
+   }
+   .row{
+    --bs-gutter-x: 0rem !important;
+   }
+   #hitMeBtn{
     width: 100% !important;
    }
 }
