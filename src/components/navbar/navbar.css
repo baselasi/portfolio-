@@ -20,10 +20,15 @@ html,body{
     transition: opacity 2s;
     background-color: white;
     top: 0.1px;
+    
 }
 @media only screen and (max-width: 700px){
     .navbar{
         padding-top: 1rem;
         padding-bottom: 0px;
+
+    }
+    #navList{
+        justify-content: space-evenly !important;
     }
 }
