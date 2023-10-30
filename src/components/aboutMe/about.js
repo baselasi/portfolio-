@@ -21,12 +21,11 @@ export default function About(){
                     {data.profile }
                 </p>
                 
-                    <a href="CVBassel-Assi.pdf" download="ASSI-BASSEL RESUME"><button className="col-3 btn download">DOWNLOAD RESUME</button></a>
+                    <a href="CVBassel-Assi.pdf" download="ASSI-BASSEL RESUME"><button className="col-8 offset-2 btn-primary mt-3 btn download">DOWNLOAD RESUME</button></a>
                 
             </div>
            </div>
-           <div className='empty-div' style={{top:"99%",width:"10%",position:"absolute",left:"90%"}}></div>
-        <div className='empty-div' style={{top:"99%",width:"10%",position:"absolute"}}></div>
+           
         </div>
     )
 }
