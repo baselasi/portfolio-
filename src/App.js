@@ -44,6 +44,7 @@ function App() {
       <AboutMe 
         showButton={showButton}
         scroll={setContact}
+        style="font-family: 'Binary X CHR BRK', sans-serif;"
       />
       <Navbar 
         setButtonOpacity={setButton}
