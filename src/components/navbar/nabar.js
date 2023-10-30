@@ -1,11 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import { useNavigate } from "react-router-dom";
-
 import './navbar.css'
-import { Button } from "bootstrap";
-
 export default function Navbar(props){
     const [isShowing,setShow] = useState(false)
     const ref=useRef()
@@ -24,7 +20,7 @@ export default function Navbar(props){
     //const navigate = useNavigate()
     return(
        <nav  className="navbar navbar-expand sticky nav-bar " style={{opacity:isShowing?"0.9":"1",zIndex:"2"}}>
-            <div ref={ref} className="container " >
+            <div id="navList" ref={ref} className="container " >
                 <ul className="navbar-nav " >
                     <li className="nav-item"><button className="nav-link" style={{color:"rgb(102, 255, 0)"}} onClick={()=>navigate("aboutME")}>ABOUT ME</button></li>
                     <li className="nav-item"><button className="nav-link" style={{color:"rgb(102, 255, 0)"}} onClick={()=>navigate("skills")}>SKILLS</button></li>
