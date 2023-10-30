@@ -54,4 +54,24 @@
     button.btn{
         width: 100%  !important;
     }
+    .marging-padding{
+        margin-left:0;
+        margin-right: 0;
+        text-align: center;
+    }
+    .footer{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    input{
+        height: 50px;
+    }
+    .btn{
+        height: 50px !important;
+        margin-top: 1rem;
+   }
+   .icons{
+    justify-content: space-around !important;
+    width: 100% !important;
+   }
 }
