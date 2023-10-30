@@ -74,7 +74,7 @@ export default {
         },
         {
             skill:'BOOTSTRAP',
-            competence: 30,
+            competence: 50,
             logo:'../imgs/bootstrap.png'
         },
         {
