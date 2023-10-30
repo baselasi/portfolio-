@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
+import "../style.css"
 export default function ContactMe(props){
     const [sectionIntersction,setSectionIntersction] = useState(false)
     useEffect(()=>{
@@ -30,15 +31,15 @@ export default function ContactMe(props){
             <h2 className="col-md-6">{sectionIntersction?"HIT ME UP":binaryLetter}</h2>
             <form className="col-md-6" ref={form} onSubmit={sendEmail} >
                 <div class="form-group">
-                    <label for="name" >Name</label>
-                    <input type="text" name="name" class="form-control" id="name"  placeholder="enter name"></input>
-                    <label for="email">Email address</label>
-                    <input type="email" name="email" class="form-control" id="email" placeholder="enter email"></input>
-                    <label for="subject">Subject</label>
-                    <input type="text" name="subject" className="form-control" id="subject" placeholder="enter subject"></input>
-                    <label for="textArea">Message</label>
-                    <textarea class="form-control" name="text" id="textArea" rows="4"></textarea>
-                    <input type="submit" className="btn"></input>
+                    <label for="name" >Name:</label>
+                    <input type="text" name="name" class="form-control" id="name"  placeholder="Name" required></input>
+                    <label for="email">Email address:</label>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Email" required></input>
+                    <label for="subject">Subject:</label>
+                    <input type="text" name="subject" className="form-control" id="subject" placeholder="Subject" required ></input>
+                    <label for="textArea">Message:</label>
+                    <textarea class="form-control" name="text" id="textArea" rows="4" required></textarea>
+                    <input type="submit" className="btn btn-primary col-10 mt-3"></input>
                 </div>
             </form>
             </div>
