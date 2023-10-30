@@ -1,3 +1,4 @@
+
 .lists{
     display: flex;
     justify-content: space-between;
@@ -6,6 +7,9 @@
 .numbers{
     display: flex;
     flex-direction: column;
+    font-family: 'Binary X CHR BRK', sans-serif;
+    font-weight: 400;
+
     
 }
 .empty-div{
