@@ -19,18 +19,14 @@ function App() {
     switch (navigateTo){
       case "aboutME":
         setDestination (aboutMe);
-        console.log(destination)
         break
       case "skills":
         setDestination(skills);
-        console.log(destination)
         break
       case "contact":
         setDestination(contact)
-        console.log(destination)
       break
       default:
-      console.log("err")
     }
   },[navigateTo])
    if(destination !==undefined){
