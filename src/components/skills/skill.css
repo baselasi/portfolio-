@@ -19,6 +19,9 @@
     justify-content: space-between;
     align-self: center;
     transition: opacity ease-in 1s;
+    font-family: 'Binary X CHR BRK', sans-serif !important;
+    color: green;
+
 }
 .skill-level{
     background-color: rgb(20, 33, 61);
