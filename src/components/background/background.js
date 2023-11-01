@@ -93,7 +93,7 @@ export default function AboutMe(props){
                     {renderCntent()}
             </div>
             <div className="col-sm-6 intro" style={{fontFamily:dinamicaIntro ? 'Binary X CHR BRK':"Georgia, 'Times New Roman', Times, serif"}}>
-                <h1 className=" h-25 flex-box-column title" style={{color: !dinamicaIntro ? "rgb(232, 249, 253)":"green"}}>
+                <h1 className=" h-25 flex-box-column title" style={{color: !dinamicaIntro ? "rgb(232, 249, 253)":"lime"}}>
                     <span>{!dinamicaIntro ? "Bassel Assi": "01101000  01101100 01101111"}</span>
                     <br></br> {!dinamicaIntro ? "Frontend Developer / Process And Material Engineer": "01101000  01101100 01101111 01101000 01101111"} </h1>
                 <div></div>
