@@ -78,9 +78,9 @@ export default {
             logo:'../imgs/bootstrap.png'
         },
         {
-            skill:'SQL',
-            competence: 20,
-            logo: '../imgs/sql-server.png'
+            skill:'SVELTE',
+            competence: 50,
+            logo: '../imgs/svelte-icon.png'
         },
     
    ],
