@@ -13,8 +13,8 @@ export default {
             persona seria con una grande capacità di adattamento e la voglia di imparare. Cerco la mia prima esperienza per fare partire la mia carriera.`
    },
    profile:'I am a process and materials engineer, i got my bachelor degree in industrial engineering, '+
-            'then my a master degree in process and material engineering both from Trieste university. During the past years i develop a interest in coding, and the intrest slowly become a passion, '+
-            'so i decided to pursue a new carrier as programer. I taught myself how to code using the basic languages for front-end development (JAVASCRIPT, HTML, CSS, BOOTSTRAP, REACT).'+
+            'then my master degree in process and material engineering both from Trieste university. During the past years i develop a interest in coding, and the intrest slowly become a passion, '+
+            'so i decided to pursue a new carrier as programer. I taught myself how to code using the basic technology for front-end development (JAVASCRIPT, HTML, CSS, BOOTSTRAP, REACT).'+
             ' I am an intelligent, disciplined, responsible and hardworking person '+
             'with height motivation and curiosity and never ending desire of learning.',
    studies: [
@@ -120,7 +120,7 @@ export default {
     },
     {
         skill:'ORGANIZATION',
-        logo:'../imgs/organization.png'
+        logo:'imgs/organization.png'
     },
 
    ],
