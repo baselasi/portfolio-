@@ -20,7 +20,8 @@ html,body{
     transition: opacity 2s;
     background-color: white;
     top: 0.1px;
-    
+    font-weight: 700;
+    font-size: large;
 }
 @media only screen and (max-width: 700px){
     .navbar{

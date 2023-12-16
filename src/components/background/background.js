@@ -83,7 +83,7 @@ export default function AboutMe(props){
     <>
         <div className="empty-div" style={{left:"0%"}} onMouseMove={change}></div>
         <div className="empty-div flex-column align-items-center" style={{width:"50%",left:"25%",justifyContent:"flex-end",display:"flex"}}onMouseEnter={bringback}>
-            <button style={{display:dinamicaIntro ? "none" : "block",transition:"opacity ease-out 1s", backgroundColor:"rgba(155, 189, 168, 0.568)" }} className="btn" id="hitMeBtn" onClick={scrollIntoContact}>
+            <button style={{display:dinamicaIntro ? "none" : "block",transition:"opacity ease-out 1s", backgroundColor:"rgba(155, 189, 168, 0.568)" }} className="btn btn-primery" id="hitMeBtn" onClick={scrollIntoContact}>
                 HIT ME UP
             </button>
         </div>
