@@ -1,4 +1,4 @@
-li{
+ol > li{
     list-style-type: circle;
     height: 20%;
     color: green;/* rgb(255, 255, 243); */;
