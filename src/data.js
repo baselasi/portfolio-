@@ -12,11 +12,17 @@ export default {
             competenza in javascript, css,html, react, Bootstrap e object-oriented-programing. Sono una
             persona seria con una grande capacità di adattamento e la voglia di imparare. Cerco la mia prima esperienza per fare partire la mia carriera.`
    },
-   profile:'I am a process and materials engineer, i got my bachelor degree in industrial engineering, '+
-            'then my master degree in process and material engineering both from Trieste university. During the past years i develop a interest in coding, and the intrest slowly become a passion, '+
-            'so i decided to pursue a new carrier as programer. I taught myself how to code using the basic technology for front-end development (JAVASCRIPT, HTML, CSS, BOOTSTRAP, REACT).'+
-            ' I am an intelligent, disciplined, responsible and hardworking person '+
-            'with height motivation and curiosity and never ending desire of learning.',
+//    profile:'I am a process and materials engineer, i got my bachelor degree in industrial engineering, '+
+//             'then my master degree in process and material engineering both from Trieste university. During the past years i develop a interest in coding, and the intrest slowly become a passion, '+
+//             'so i decided to pursue a new carrier as programer. I taught myself how to code using the basic technology for front-end development (JAVASCRIPT, HTML, CSS, BOOTSTRAP, REACT).'+
+//             ' I am an intelligent, disciplined, responsible and hardworking person '+
+//             'with height motivation and curiosity and never ending desire of learning.',
+profile:"I am an Industrial Engineer pursuing a Master's degree in Process and Material Engineering at Trieste University.\n"+
+"My journey into the world of programming began as a personal passion, and it has since evolved into a fulfilling and rewarding career path.\n"+
+"Driven by an intrinsic fascination with technology and a desire to create impactful solutions, I embarked on a self-taught "+
+"programming journey that has become a defining aspect of my professional identity. "+
+"The thrill of turning lines of code into tangible, user-friendly experiences ignited my passion for software development,"+ 
+" and I have been unwaveringly dedicated to expanding my skills ever since.",
    studies: [
         {
             degree:'Laurea triennale in ingegneria industriale',
@@ -53,19 +59,9 @@ export default {
    ],
    programnigSkills: [
         {
-            skill:'JAVASCRIPT',
+            skill:'TYPESCRIPT',
             competence: 75,
             logo: '../imgs/java-script.png'
-        },
-        {
-            skill:'CSS',
-            competence: 60,
-            logo: '../imgs/css-3.png'
-        },
-        {
-            skill:'HTML',
-            competence: 75,
-            logo: '../imgs/html (2).png'
         },
         {
             skill: 'REACT',
@@ -74,15 +70,24 @@ export default {
         },
         {
             skill:'BOOTSTRAP',
-            competence: 50,
+            competence: 80,
             logo:'../imgs/bootstrap.png'
         },
         {
             skill:'SVELTE',
-            competence: 50,
+            competence: 70,
             logo: '../imgs/svelte-icon.png'
         },
-    
+        {
+            skill:'EXPRESSJS',
+            competence: 50,
+            logo: '../imgs/Expressjs.png'
+        },
+        {
+            skill:'NODE',
+            competence: 70,
+            logo: '../imgs/node.png'
+        },
    ],
    engineeringSkills:[
         {

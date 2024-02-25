@@ -59,7 +59,7 @@ export default function Skills(){
                             Skill.count++
                             return(
                                 <div className="col-md-4 skill_continer"  style={{color: sectionEntrie? "black" :"green"}} >
-                                    <img className="logo " style={{animationDelay:`${data.indexOf(skill) +5}s`}} src={skill.logo}></img>
+                                    <img className="logo " style={{width:`${skill.skill=="EXPRESSJS"?"90px":""}`}} src={skill.logo}></img>
                                     <h4 className="sticky">
                                     {!sectionEntrie? binaryLetter : skill.skill}
                                     </h4>

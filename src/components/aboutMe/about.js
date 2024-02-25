@@ -17,7 +17,7 @@ export default function About(){
                 { "WHO AM I ?" }
             </h2>
             <div className="col-sm-8" >
-                <p className="h2" style={{color:  "black"}}>
+                <p className="h2" style={{color:  "black", whiteSpace: "pre-line"}}>
                     {data.profile }
                 </p>
                     <a href="CVBassel-Assi.pdf" download="ASSI-BASSEL RESUME"><button className="col-10 col-md-8 offset-md-2 btn-primary mt-3 btn download">DOWNLOAD RESUME</button></a>
