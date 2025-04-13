@@ -6,123 +6,138 @@ const DOT_COLOR2 = "#00FF00"; // Lime
 const LINE_COLORS = [DOT_COLOR1, DOT_COLOR2];
 const BACKGROUND_COLOR = "#000000";
 
-// Radii
-const MOUSE_RADIUS = 200;
+// Config
+const DOT_SPEED = 0.4;
+const MOUSE_RADIUS = 400;
 const SPOTLIGHT_RADIUS = 600;
 
 const Background = () => {
     const canvasRef = useRef(null);
+    const animationRef = useRef(null);
+    const dotsRef = useRef([]);
+    const mouseRef = useRef({ x: 0, y: 0 });
+    const dotCountRef = useRef(0);
+    const distanceRef = useRef(0);
 
     useEffect(() => {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext("2d");
-
         const dotColors = [DOT_COLOR1, DOT_COLOR2];
-        const lineColors = LINE_COLORS;
 
         const setCanvasSize = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            canvas.style.display = "block";
+            const w = window.innerWidth;
+            const h = window.innerHeight;
+            canvas.width = w;
+            canvas.height = h;
+            canvas.style.width = `${w}px`;
+            canvas.style.height = `${h}px`;
+
+            dotCountRef.current = Math.floor((w * h) / 7000);
+            distanceRef.current = Math.sqrt(w * h) / 10;
         };
 
         setCanvasSize();
-
-        const mousePosition = {
+        mouseRef.current = {
             x: canvas.width / 2,
             y: canvas.height / 2,
-        };
-
-        const dots = {
-            nb: Math.floor((canvas.width * canvas.height) / 6000), 
-            distance: Math.sqrt(canvas.width * canvas.height) / 9,
-            array: [],
         };
 
         class Dot {
             constructor(x = null, y = null, isMouseDot = false) {
                 this.x = x ?? Math.random() * canvas.width;
                 this.y = y ?? Math.random() * canvas.height;
-                this.vx = isMouseDot ? 0 : -1 + Math.random();
-                this.vy = isMouseDot ? 0 : -1 + Math.random();
-                this.radius = isMouseDot ? 3 : Math.random() * 2 + 0.8;
+                this.vx = isMouseDot ? 0 : (Math.random() - 0.5) * DOT_SPEED;
+                this.vy = isMouseDot ? 0 : (Math.random() - 0.5) * DOT_SPEED;
+                this.radius = isMouseDot ? 3 : Math.random() * 2 + 0.5;
                 this.color = isMouseDot ? DOT_COLOR2 : dotColors[Math.floor(Math.random() * dotColors.length)];
-                this.lineColor = isMouseDot
-                    ? DOT_COLOR2
-                    : Math.random() < 0.75 ? DOT_COLOR1 : DOT_COLOR2;
+                this.lineColor = isMouseDot ? DOT_COLOR2 : Math.random() < 0.75 ? DOT_COLOR1 : DOT_COLOR2;
                 this.isMouseDot = isMouseDot;
             }
 
-            isInMouseRadius() {
-                const dx = this.x - mousePosition.x;
-                const dy = this.y - mousePosition.y;
-                return Math.sqrt(dx * dx + dy * dy) < MOUSE_RADIUS;
-            }
-
-            isInSpotlightRadius() {
-                const dx = this.x - mousePosition.x;
-                const dy = this.y - mousePosition.y;
-                return Math.sqrt(dx * dx + dy * dy) < SPOTLIGHT_RADIUS;
-            }
-
-            create() {
-                const dx = this.x - mousePosition.x;
-                const dy = this.y - mousePosition.y;
+            draw() {
+                const dx = this.x - mouseRef.current.x;
+                const dy = this.y - mouseRef.current.y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
 
+                // Check if the dot is within the spotlight radius
                 if (dist > SPOTLIGHT_RADIUS && !this.isMouseDot) return;
 
+                // Adjust opacity based on the distance to the spotlight center
                 let opacity = 1;
 
-                if (dist > MOUSE_RADIUS && !this.isMouseDot) {
+                // If the dot is outside the mouse radius but inside the spotlight radius
+                if (dist > MOUSE_RADIUS && dist <= SPOTLIGHT_RADIUS && !this.isMouseDot) {
                     const fadeRange = SPOTLIGHT_RADIUS - MOUSE_RADIUS;
                     opacity = 1 - (dist - MOUSE_RADIUS) / fadeRange;
+                } else if (dist > SPOTLIGHT_RADIUS) {
+                    opacity = 0; // Fully transparent when outside the spotlight radius
                 }
+
+                // Ensure a minimum opacity value for visual appeal
+                opacity = Math.max(opacity, 0);
 
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+
+                // Add glow effect
+                ctx.shadowBlur = 25;
+                ctx.shadowColor = this.color;
+
                 ctx.fillStyle = this.hexToRgba(this.color, opacity);
                 ctx.fill();
+
+                // Reset the glow effect after fill
+                ctx.shadowBlur = 0;
+
             }
 
-            animate() {
+            updatePosition() {
                 if (this.isMouseDot) {
-                    this.x = mousePosition.x;
-                    this.y = mousePosition.y;
+                    this.x = mouseRef.current.x;
+                    this.y = mouseRef.current.y;
                     return;
                 }
 
-                if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
-                if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
-
                 this.x += this.vx;
                 this.y += this.vy;
+
+                if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
+                if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
             }
 
-            line() {
-                if (!this.isInMouseRadius() && !this.isMouseDot) return;
+            connectLines(dots) {
+                if (!this.isInRadius(MOUSE_RADIUS) && !this.isMouseDot) return;
 
-                for (let j = 0; j < dots.array.length; j++) {
-                    const j_dot = dots.array[j];
+                for (let i = 0; i < dots.length; i++) {
+                    const dot = dots[i];
+                    if (dot === this || (!dot.isInRadius(MOUSE_RADIUS) && !dot.isMouseDot)) continue;
 
-                    if (
-                        j_dot === this ||
-                        (!j_dot.isInMouseRadius() && !j_dot.isMouseDot)
-                    ) continue;
-
-                    const dx = this.x - j_dot.x;
-                    const dy = this.y - j_dot.y;
+                    const dx = this.x - dot.x;
+                    const dy = this.y - dot.y;
                     const distSq = dx * dx + dy * dy;
 
-                    if (distSq < dots.distance * dots.distance) {
+                    if (distSq < distanceRef.current * distanceRef.current) {
                         ctx.beginPath();
                         ctx.moveTo(this.x, this.y);
-                        ctx.lineTo(j_dot.x, j_dot.y);
+                        ctx.lineTo(dot.x, dot.y);
                         ctx.strokeStyle = this.lineColor;
-                        ctx.lineWidth = 0.6;
+                        ctx.lineWidth = 0.4;
+
+                        // Glow effect for lines
+                        ctx.shadowBlur = 15;
+                        ctx.shadowColor = this.lineColor;
+
                         ctx.stroke();
+
+                        ctx.shadowBlur = 0; // reset
                     }
                 }
+            }
+
+            isInRadius(radius) {
+                const dx = this.x - mouseRef.current.x;
+                const dy = this.y - mouseRef.current.y;
+                return dx * dx + dy * dy < radius * radius;
             }
 
             hexToRgba(hex, opacity) {
@@ -134,45 +149,48 @@ const Background = () => {
             }
         }
 
-        function initializeDots() {
-            dots.array = [];
-
-            for (let i = 0; i < dots.nb; i++) {
-                dots.array.push(new Dot());
+        const initDots = () => {
+            const newDots = [];
+            for (let i = 0; i < dotCountRef.current; i++) {
+                newDots.push(new Dot());
             }
+            newDots.push(new Dot(mouseRef.current.x, mouseRef.current.y, true)); // mouse dot
+            dotsRef.current = newDots;
+        };
 
-            // Add the mouse-following dot
-            dots.array.push(new Dot(mousePosition.x, mousePosition.y, true));
-        }
-
-        function drawDots() {
+        const draw = () => {
             ctx.fillStyle = BACKGROUND_COLOR;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            for (let i = 0; i < dots.array.length; i++) {
-                const dot = dots.array[i];
-                dot.animate();
-                dot.create();
-                dot.line();
+            const dots = dotsRef.current;
+
+            for (const dot of dots) {
+                dot.updatePosition();
+                dot.draw();
+                dot.connectLines(dots);
             }
-        }
+        };
 
-        function animate() {
-            drawDots();
-            requestAnimationFrame(animate);
-        }
+        const animate = () => {
+            draw();
+            animationRef.current = requestAnimationFrame(animate);
+        };
 
-        initializeDots();
+        initDots();
         animate();
 
         const handleMouseMove = (e) => {
-            mousePosition.x = e.pageX;
-            mousePosition.y = e.pageY;
+            mouseRef.current.x = e.clientX;
+            mouseRef.current.y = e.clientY;
         };
 
+        let resizeTimeout;
         const handleResize = () => {
-            setCanvasSize();
-            initializeDots();
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                setCanvasSize();
+                initDots();
+            }, 100); // debounce for 100ms
         };
 
         window.addEventListener("mousemove", handleMouseMove);
@@ -181,6 +199,7 @@ const Background = () => {
         return () => {
             window.removeEventListener("mousemove", handleMouseMove);
             window.removeEventListener("resize", handleResize);
+            cancelAnimationFrame(animationRef.current);
         };
     }, []);
 
