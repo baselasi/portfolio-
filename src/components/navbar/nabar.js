@@ -19,7 +19,7 @@ export default function Navbar(props){
     }
     //const navigate = useNavigate()
     return(
-       <nav  className="navbar navbar-expand sticky nav-bar " style={{opacity:isShowing?"0.9":"1",zIndex:"2"}}>
+       <nav  className="navbar navbar-expand sticky nav-bar " style={{background:"black",zIndex:"2"}}>
             <div id="navList" ref={ref} className="container " >
                 <ul className="navbar-nav " >
                     <li className="nav-item"><button className="nav-link" style={{color:"rgb(102, 255, 0)"}} onClick={()=>navigate("aboutME")}>ABOUT ME</button></li>

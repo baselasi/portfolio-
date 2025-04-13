@@ -9,6 +9,8 @@ import Footer from './components/footer/footer';
 import MoreDetailsMain from './components/moreDetailsPage/mainComponent/mainCopmonent';
 import "../src/components/background/background.css"
 import Backround from './components/particlesBackround/Backround';
+import TypewriterText from './comon/TypewriterText ';
+import IntroText from './components/particlesBackround/IntroText';
 function App() {
   const [showButton, setButton] = useState(true)
   const [scrollIntoContact, setContact] = useState(false)
@@ -31,6 +33,35 @@ function App() {
         break
       default:
     }
+
+    const style = document.createElement("style");
+    style.innerHTML = `
+      @keyframes slideInLeft {
+        from {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    return () => {
+      document.head.removeChild(style);
+    };
   }, [navigateTo])
   if (destination !== undefined) {
     window.scrollTo({
@@ -44,22 +75,23 @@ function App() {
 
         <Backround
         />
+        <IntroText />
         <Navbar
           setButtonOpacity={setButton}
           navioageteTo={setNavigate}
         />
-        <div className='main' >
+        <main className='main' >
           {/* <div className='empty-div' style={{ top: "99%", width: "10%", position: "absolute", left: "90%" }}></div>
           <div className='empty-div' style={{ top: "99%", width: "10%", position: "absolute" }}></div> */}
           <section ref={aboutMe}><About /></section>
-          <section ref={skills}> <Skills /></section>
+          {/* <section ref={skills}> <Skills /></section> */}
           <section ref={contact}><ContactMe
             scrollintoView={scrollIntoContact}
             scroll={setContact}
           />
           </section>
           <Footer />
-        </div>
+        </main>
 
       </>
     );

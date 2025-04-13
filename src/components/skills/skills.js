@@ -51,7 +51,7 @@ export default function Skills(){
             this.renderContent = (data)=>{
                 return(
                     <div className="container flex-column align-content-around"  style={{fontFamily:!sectionEntrie ? 'Binary X CHR BRK':"Georgia, 'Times New Roman', Times, serif"}}>
-                        <h2 ref={(el)=>{headers[this.index]=el}} className="border-bottom h-25 skill-title hide" style={{color:!sectionEntrie? "black" :"green",height:"30px"}} >
+                        <h2 ref={(el)=>{headers[this.index]=el}} className=" h-25 skill-title hide" style={{color:!sectionEntrie? "black" :"green",height:"30px"}} >
                             {!sectionEntrie? binaryLetter : title}
                         </h2>
                         <div accessKey={this.index} ref={(el)=>skillLevels[this.index]=el} className="row">
@@ -83,7 +83,7 @@ export default function Skills(){
     const engineeringSkills = new Skill ("ENGINERING SKILLS")
     const softSkills = new Skill ("SOFT SKILLS")
     return(
-        <section ref={section} className=" flex justify-content-between align-content-between marging-padding border-bottom border-5 border-primary">
+        <section ref={section} className=" flex justify-content-between align-content-between marging-padding   ">
             {programnigSkills.renderContent(data.programnigSkills)}
             {engineeringSkills.renderContent(data.engineeringSkills)}
             {softSkills.renderContent(data.softSkills)}

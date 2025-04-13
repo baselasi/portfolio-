@@ -1,29 +1,32 @@
-.section{
+.section {
     height: 100vh;
     position: relative;
     top: 0.10px;
-   
+
 }
-.btn{
+
+.btn {
     height: 50px !important;
 }
-.marging-padding{
+
+.marging-padding {
     padding-bottom: 10%;
-    background-color: rgb(248, 246, 244);
     padding-top: 10%;
     margin-left: 10%;
     margin-right: 10%;
-    border-image: linear-gradient(to right, transparent 0%, blue 50%,transparent 100%) 100% 1;
+    border-image: linear-gradient(to right, transparent 0%, blue 50%, transparent 100%) 100% 1;
     position: relative;
     transition: color ease 2s;
 }
-.flex{
+
+.flex {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.imgs{
+
+.imgs {
     position: absolute;
     left: 0;
     top: 0;
@@ -31,53 +34,67 @@
     height: 100%;
     width: 100%;
 }
-.sticky{
+
+.sticky {
     position: sticky;
 }
-.absolut{
+
+.absolut {
     position: absolute;
 }
-.main{
+
+.main {
     background-position: center;
     background-size: contain;
+    backdrop-filter: blur(4px);
 }
-@media only screen and (max-width: 576px){
-    .main{
+
+@media only screen and (max-width: 576px) {
+    .main {
         background-color: black;
     }
-    p.h2{
+
+    p.h2 {
         font-size: 16px;
     }
-    .title{
+
+    .title {
         font-size: 20px;
     }
-    .intro{
-        left:0% !important;
+
+    .intro {
+        left: 0% !important;
     }
-   
-    .marging-padding{
-        margin-left:0;
+
+    .marging-padding {
+        margin-left: 0;
         margin-right: 0;
         text-align: center;
     }
-    .footer{
+
+    .footer {
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
-    input{
+
+    input {
         height: 50px;
     }
-    .btn{
+
+    .btn {
         margin-top: 1rem;
-   }
-   .icons{
-    justify-content: space-around !important;
-    width: 100% !important;
-   }
-   .row{
-    --bs-gutter-x: 0rem !important;
-   }
-   #hitMeBtn{
-    width: 100% !important;
-   }
+    }
+
+    .icons {
+        justify-content: space-around !important;
+        width: 100% !important;
+    }
+
+    .row {
+        --bs-gutter-x: 0rem !important;
+    }
+
+    #hitMeBtn {
+        width: 100% !important;
+    }
 }

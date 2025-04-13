@@ -12,12 +12,16 @@ const MOUSE_RADIUS = 400;
 const SPOTLIGHT_RADIUS = 600;
 
 const Background = () => {
+    
+    
+
     const canvasRef = useRef(null);
     const animationRef = useRef(null);
     const dotsRef = useRef([]);
     const mouseRef = useRef({ x: 0, y: 0 });
     const dotCountRef = useRef(0);
     const distanceRef = useRef(0);
+    
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -32,7 +36,7 @@ const Background = () => {
             canvas.style.width = `${w}px`;
             canvas.style.height = `${h}px`;
 
-            dotCountRef.current = Math.floor((w * h) / 7000);
+            dotCountRef.current = Math.floor((w * h) / 8500);
             distanceRef.current = Math.sqrt(w * h) / 10;
         };
 
@@ -187,10 +191,10 @@ const Background = () => {
         let resizeTimeout;
         const handleResize = () => {
             clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
+            // resizeTimeout = setTimeout(() => {
                 setCanvasSize();
                 initDots();
-            }, 100); // debounce for 100ms
+            // }, 100); // debounce for 100ms
         };
 
         window.addEventListener("mousemove", handleMouseMove);
@@ -203,7 +207,7 @@ const Background = () => {
         };
     }, []);
 
-    return <canvas ref={canvasRef} />;
+    return <canvas ref={canvasRef} className="canvas" />;
 };
 
 export default Background;

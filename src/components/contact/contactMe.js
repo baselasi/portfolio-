@@ -26,7 +26,7 @@ export default function ContactMe(props){
         props.scroll(false)
     }
     return(
-        <div ref={section} style={{backgroundColor:"rgb(248, 246, 244)"}} className=" flex justify-content-center marging-padding">
+        <div ref={section}  className=" flex justify-content-center marging-padding">
             <div className="col-sm-8 row">
             <h2 className="col-md-6">{sectionIntersction?"HIT ME UP":binaryLetter}</h2>
             <form className="col-md-6" ref={form} onSubmit={sendEmail} >
