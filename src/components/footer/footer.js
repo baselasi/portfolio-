@@ -10,13 +10,13 @@ export default function Footer() {
 
 
     return (
-        <footer className="footer bg-black">
-            <div className="icons">
-                <a href="mailto:bassel-assi@live.com" target="_blank"><FontAwesomeIcon icon={faEnvelope} /></a>
-                <a href="https://www.linkedin.com/in/basselassi/" target="_blank"><FontAwesomeIcon icon={faLinkedinIn} /></a>
-                <a href="https://github.com/baselasi" target="_blank"><FontAwesomeIcon icon={faGithub} /></a>
+        <footer className="footer " style={{background:"#0a0a0a"}}>
+            <div className="icons text-color">
+                <a href="mailto:bassel-assi@live.com" target="_blank"><FontAwesomeIcon icon={faEnvelope} className="text-color" /></a>
+                <a href="https://www.linkedin.com/in/basselassi/" target="_blank"><FontAwesomeIcon icon={faLinkedinIn} className="text-color" /></a>
+                <a href="https://github.com/baselasi" target="_blank"><FontAwesomeIcon icon={faGithub} className="text-color" /></a>
             </div>
-            <div>
+            <div className="text-highlight">
                 BASSEL ASSI
             </div>
         </footer>

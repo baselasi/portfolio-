@@ -1,25 +1,30 @@
-.footer{
-    height: 5%;
+.footer {
+    height: 7%; /* Use vh for consistent vertical height across screen sizes */
     display: flex;
     flex-direction: column;
+    justify-content: center; /* Centers content vertically */
     align-items: center;
-    border-top:2px;
-    border-style: solid;
+    padding: 0; /* padding-top & bottom not needed with flex centering */
+    padding-top: 5px;
+    background: linear-gradient(to top, #0a0a0a 70%, rgba(0, 255, 0, 0.637) 100%) !important;
+    box-shadow: 0 -2px 5px lime;
+
+    border-top: 2px solid lime; /* Combine border properties into one line */
     font-weight: 100;
-    padding-bottom: 0%;
-    padding-top: 0%;
-    margin-left: 10%;
-    margin-right: 10%;
-    border-image: linear-gradient(to right, transparent 0%, rgb(0, 0, 0) 50%,transparent 100%) 100% 1;
+    color: #ccc; /* Light gray for text readability on dark bg */
+    font-size: 0.9rem;
+    text-align: center;
 }
-.icon{
+
+.icon {
     font-size: 16px;
     height: 30px;
     width: 30px;
     color: rgb(255, 6, 6);
     display: flex;
 }
-.icons{
+
+.icons {
     display: flex;
     justify-content: space-between;
     width: 20%;

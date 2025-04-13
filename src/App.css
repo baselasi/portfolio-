@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -11,7 +12,7 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-  
+
 }
 
 .App-header {
@@ -28,24 +29,49 @@
 .App-link {
   color: #61dafb;
 }
-.hello{
+
+.hello {
   height: 100%;
   width: 100%;
   background-position: center;
   background-size: cover;
   transition: opacity 2s;
-  
+
 }
+
+.text-color {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.text-highlight {
+  color: rgb(102, 255, 0) !important;
+}
+
+.my-btn {
+  border: 2px solid lime;
+  color: white;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(120deg, lime, rgba(255, 255, 255, 0.548));
+  box-shadow: 0 0 5px lime, 0 0 15px white;
+}
+
 body {
   opacity: 1;
   transition: opacity 3s;
   scroll-snap-type: y mandatory;
   color: rgb(102, 255, 0);
 }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

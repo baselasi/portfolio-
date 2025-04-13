@@ -32,15 +32,10 @@ function App() {
         break
       default:
     }
-
-
-
-
   }, [navigateTo])
 
   const scrollToContact = () => {
-   
-     contactForm.current.scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'center' }) // Accessing the input inside MyInput
+    contactForm.current.scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'center' })
   };
 
 
@@ -62,8 +57,7 @@ function App() {
           navioageteTo={setNavigate}
         />
         <main className='main' >
-          {/* <div className='empty-div' style={{ top: "99%", width: "10%", position: "absolute", left: "90%" }}></div>
-          <div className='empty-div' style={{ top: "99%", width: "10%", position: "absolute" }}></div> */}
+
           <section ref={aboutMe}><About /></section>
           {/* <section ref={skills}> <Skills /></section> */}
           <section ref={contact}><ContactSection
@@ -72,7 +66,6 @@ function App() {
           </section>
           <Footer />
         </main>
-
       </>
     );
   }

@@ -56,10 +56,10 @@ const ContactSection = forwardRef((props, contactForm) => {
 
     return (
         <div ref={contactForm} className=" flex justify-content-center marging-padding">
-            <div className="col-sm-8 row">
-                <h2 className="col-md-6"> "HIT ME UP" </h2>
+            <div className="col-sm-12 row">
+                <h2 className="col-md-6 text-highlight">HIT ME UP</h2>
                 <form className="col-md-6"   >
-                    <div class="form-group">
+                    <div class="form-group text-color">
                         <label for="name" >Name:</label>
                         <input type="text" name="name" class="form-control" id="name" placeholder="Name" required></input>
                         <label for="email">Email address:</label>
@@ -68,11 +68,11 @@ const ContactSection = forwardRef((props, contactForm) => {
                         <input type="text" name="subject" className="form-control" id="subject" placeholder="Subject" required ></input>
                         <label for="textArea">Message:</label>
                         <textarea class="form-control" name="text" id="textArea" rows="4" required></textarea>
-                        <input type="submit" className="btn btn-primary col-10 mt-3"></input>
+                        <input type="submit" className="my-btn  col-12 mt-3"></input>
                     </div>
                 </form>
             </div>
-            <div className="col-sm-6">
+            <div className="col-sm-6 ">
             </div>
         </div>
     )
