@@ -36,7 +36,7 @@ const Background = () => {
             canvas.style.width = `${w}px`;
             canvas.style.height = `${h}px`;
 
-            dotCountRef.current = Math.floor((w * h) / 8500);
+            dotCountRef.current = Math.floor((w * h) / 8000);
             distanceRef.current = Math.sqrt(w * h) / 10;
         };
 

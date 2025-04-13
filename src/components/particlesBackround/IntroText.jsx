@@ -1,18 +1,24 @@
 import { useState, useEffect, useCallback } from "react";
 import TypewriterText from "../../comon/TypewriterText ";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
-const IntroText = () => {
+const IntroText = ({ scrollToContactForm }) => {
     const [showName, setShowName] = useState(false);
     const [showText, setShowText] = useState(false);
     const [isTypingComplete, setIsTypingComplete] = useState(false); // Track if typing is complete
 
-    const handleTypingDone = useCallback(() => {
+    const handelShowName = useCallback(() => {
         setShowName(true); // Show the second typewriter text after the first is done
     }, []);
 
     const handelShowText = useCallback(() => {
         setShowText(true); // Show the second typewriter text after the first is done
     }, []);
+
+    const handleTypingComplite = useCallback(() => {
+        setIsTypingComplete(true)
+    }, [])
 
 
     return (
@@ -24,7 +30,7 @@ const IntroText = () => {
                         text="Hello, I'm "
                         speed={50}
                         delay={10}
-                        onDone={handleTypingDone} // Call handleTypingDone when typing is complete
+                        onDone={handelShowName} // Call handleTypingDone when typing is complete
                     />
 
                     {/* Conditionally render the second TypewriterText */}
@@ -43,15 +49,17 @@ const IntroText = () => {
                             text="Software developer and industrial engineer."
                             speed={50}
                             delay={40} // Add delay after the first typewriter effect
-                            onDone={handelShowText} // Set typing complete when done
+                            onDone={handleTypingComplite} // Set typing complete when done
                         />
                         : <></>}
                 </h1>
 
                 {/* Button that appears when typing is complete */}
-                {/* <div className={`slide-up-button ${isTypingComplete ? "visible" : ""}`}>
-                    <button>Click Me</button>
-                </div> */}
+                <div className={`slide-up-button ${isTypingComplete ? "visible" : ""} `}>
+                    <button
+                        onClick={scrollToContactForm}
+                        className="fancy-button "> <span> Get In Touch</span> <FontAwesomeIcon icon={faArrowDown} /></button>
+                </div>
             </div>
         </div>
     );
