@@ -46,7 +46,7 @@
 .main {
     background-position: center;
     background-size: contain;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(2px);
 }
 
 @media only screen and (max-width: 576px) {

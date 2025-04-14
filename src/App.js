@@ -8,6 +8,7 @@ import "../src/components/background/background.css"
 import Backround from './components/particlesBackround/Backround';
 import IntroText from './components/particlesBackround/IntroText';
 import ContactSection from './components/contact/contactMe';
+import Skills from './components/skills/Skills.jsx';
 function App() {
   const [showButton, setButton] = useState(true)
   const [scrollIntoContact, setContact] = useState(false)
@@ -59,7 +60,7 @@ function App() {
         <main className='main' >
 
           <section ref={aboutMe}><About /></section>
-          {/* <section ref={skills}> <Skills /></section> */}
+          <section ref={skills}> <Skills /></section>
           <section ref={contact}><ContactSection
             ref={contactForm}
           />
