@@ -24,7 +24,6 @@ const Skills = () => {
         return () => {
             observer.unobserve(skillRef.current)
         }
-
     }, [])
 
 

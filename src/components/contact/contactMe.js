@@ -53,12 +53,32 @@ export function ContactMe(props) {
 
 const ContactSection = forwardRef((props, contactForm) => {
 
+    const [isLoading, setIsLoading] = useState(false)
+    const [isError, setIsError] = useState(false)
+    const [success, setSuccess] = useState(false)
+    const form = useRef(null)
 
+    function sendEmail(e) {
+        e.preventDefault();
+        setIsLoading(true)
+        setIsError(false)
+        setSuccess(false)
+        emailjs.sendForm('service_qvzehng', 'template_2cbjn74', form.current, 'BVdexWPl-F39b-Vsi')
+            .then((result) => {
+                console.log(result.text);
+                setIsLoading(false)
+                setSuccess(true)
+            }, (error) => {
+                setIsError(true)
+                setIsLoading(false)
+                console.log(error.text);
+            });
+    }
     return (
         <div ref={contactForm} className=" flex justify-content-center marging-padding">
             <div className="col-sm-12 row">
                 <h2 className="col-md-6 text-highlight">HIT ME UP</h2>
-                <form className="col-md-6"   >
+                <form className="col-md-6" ref={form} onSubmit={sendEmail} >
                     <div class="form-group text-color">
                         <label for="name" >Name:</label>
                         <input type="text" name="name" class="form-control" id="name" placeholder="Name" required></input>
@@ -68,7 +88,10 @@ const ContactSection = forwardRef((props, contactForm) => {
                         <input type="text" name="subject" className="form-control" id="subject" placeholder="Subject" required ></input>
                         <label for="textArea">Message:</label>
                         <textarea class="form-control" name="text" id="textArea" rows="4" required></textarea>
-                        <input type="submit" className="my-btn  col-12 mt-3"></input>
+                        {isLoading ? <div class="spinner-border spinner-border-sm text-light spinner" role="status"></div> :
+                            <input type="submit" className="my-btn  col-12 mt-3 mb-2"></input>}
+                        {isError ? <span>Warning: An error occurred while sending the email. Please try again.</span> : <></>}
+                        {success ? <span>Done! Your message is on its way. I’ll get back to you soon!</span> : <></>}
                     </div>
                 </form>
             </div>

@@ -3,24 +3,38 @@ import 'bootstrap/dist/css/bootstrap.css';
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import './navbar.css'
 export default function Navbar(props) {
-    const [isShowing, setShow] = useState(false)
-    const ref = useRef()
+    const [isAtTop, setIsAtTop] = useState(false);
+
+
     useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entrie) => {
-                props.setButtonOpacity(!entrie.isIntersecting)
-                setShow(entrie.isIntersecting)
-            })
-        })
-        observer.observe(ref.current)
-    }, [])
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    let navaBarRef = useRef(null)
+
+    const handleScroll = () => {
+        if (navaBarRef.current) {
+            const rect = navaBarRef.current.getBoundingClientRect();
+            if (rect.top <= 1) {
+                setIsAtTop(true);
+            } else {
+                setIsAtTop(false);
+            }
+        }
+    };
+
     function navigate(destination) {
         props.navioageteTo(destination)
     }
-    //const navigate = useNavigate()
+
     return (
-        <nav className="navbar navbar-expand sticky nav-bar " style={{ zIndex: "2" }}>
-            <div id="navList" ref={ref} className="container " >
+        <nav className={`navbar navbar-expand sticky nav-bar ${isAtTop ? " bg-black" : ""}`} style={{ zIndex: "2" }} ref={navaBarRef}>
+            <div id="navList" className="container " >
                 <ul className="navbar-nav " >
                     <li className="nav-item"><button className="nav-link" style={{ color: "rgb(102, 255, 0)" }} onClick={() => navigate("aboutME")}>ABOUT ME</button></li>
                     <li className="nav-item"><button className="nav-link" style={{ color: "rgb(102, 255, 0)" }} onClick={() => navigate("skills")}>SKILLS</button></li>

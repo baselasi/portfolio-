@@ -66,13 +66,29 @@
   overflow: hidden;
   background: linear-gradient(120deg, lime, rgba(255, 255, 255, 0.548));
   box-shadow: 0 0 5px lime, 0 0 15px white;
+  transition: all 0.3s ease;
 }
+
+
+.my-btn:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 0 10px lime, 0 0 25px white;
+}
+
 
 body {
   opacity: 1;
   transition: opacity 3s;
   scroll-snap-type: y mandatory;
   color: rgb(102, 255, 0);
+}
+
+
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes App-logo-spin {
