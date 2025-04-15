@@ -33,10 +33,10 @@ export default function Navbar(props) {
     }
 
     return (
-        <nav className={`navbar navbar-expand sticky nav-bar ${isAtTop ? " bg-black" : ""}`} style={{ zIndex: "2" }} ref={navaBarRef}>
+        <nav className={`navbar navbar-expand sticky nav-bar ${isAtTop ? " bg-black " : ""}`} style={{ zIndex: "2",transition:"all ease-in 0.5s" }} ref={navaBarRef}>
             <div id="navList" className="container " >
                 <ul className="navbar-nav " >
-                    <li className="nav-item"><button className="nav-link" style={{ color: "rgb(102, 255, 0)" }} onClick={() => navigate("aboutME")}>ABOUT ME</button></li>
+                    <li className="nav-item"  onClick={() => navigate("aboutME")}><button className="nav-link" style={{ color: "rgb(102, 255, 0)",zIndex:"999" }}>ABOUT ME</button></li>
                     <li className="nav-item"><button className="nav-link" style={{ color: "rgb(102, 255, 0)" }} onClick={() => navigate("skills")}>SKILLS</button></li>
                     <li className="nav-item"><button className="nav-link" style={{ color: "rgb(102, 255, 0)" }} onClick={() => navigate("contact")}>CONTACTS</button></li>
                 </ul>
