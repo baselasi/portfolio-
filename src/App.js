@@ -18,13 +18,27 @@ function App() {
   useEffect(() => {
     switch (navigateTo) {
       case "aboutME":
-        aboutMe.current.scrollIntoView()
+        let position = findTheELementPostion(aboutMe.current)
+        window.scrollTo({
+          top: position,
+          behavior: "smooth"
+        });
         break
       case "skills":
-        skills.current.scrollIntoView()
+        // skills.current.scrollIntoView()
+        let position1 = findTheELementPostion(skills.current)
+        window.scrollTo({
+          top: position1,
+          behavior: "smooth"
+        });
         break
       case "contact":
-        contact.current.scrollIntoView()
+        // contact.current.scrollIntoView()
+        let position2 = findTheELementPostion(contact.current)
+        window.scrollTo({
+          top: position2,
+          behavior: "smooth"
+        });
         break
       default:
     }
@@ -33,6 +47,12 @@ function App() {
   const scrollToContact = () => {
     contact.current.scrollIntoView()
   };
+
+  function findTheELementPostion(element) {
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    const position = elementPosition - 20;
+    return position
+  }
 
 
 

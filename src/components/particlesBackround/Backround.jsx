@@ -33,8 +33,8 @@ const Background = () => {
             const h = window.innerHeight;
             canvas.width = w;
             canvas.height = h;
-            canvas.style.width = `${w}px`;
-            canvas.style.height = `${h}px`;
+            // canvas.style.width = `${w}px`;
+            // canvas.style.height = `${h}px`;
 
             dotCountRef.current = Math.floor((w * h) / 8000);
             distanceRef.current = Math.sqrt(w * h) / 10;
