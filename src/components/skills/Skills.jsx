@@ -12,6 +12,7 @@ const Skills = () => {
     const skillRef = useRef(null)
 
     useEffect(() => {
+        let refaVar = skillRef.current
         const observer = new IntersectionObserver(([entry]) => {
             if (entry.isIntersecting) setIsInView(entry.isIntersecting);
         }, {
@@ -22,7 +23,7 @@ const Skills = () => {
         }
 
         return () => {
-            observer.unobserve(skillRef.current)
+            observer.unobserve(refaVar)
         }
     }, [])
 

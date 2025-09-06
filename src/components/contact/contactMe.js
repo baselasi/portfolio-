@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useRef, useState } from "react";
+import { forwardRef, useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
 import "../style.css"
 // export function ContactMe(props) {

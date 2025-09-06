@@ -1,15 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import data from "../../data";
 import "../aboutMe/about.css"
 export default function About() {
-    const [sectionIntersction, setSectionIntersction] = useState(false)
+    // const [_, setSectionIntersction] = useState(false)
     useEffect(() => {
-        const observSection = new IntersectionObserver((entrie) => {
-            setTimeout(() => {
-                setSectionIntersction(entrie[0].isIntersecting)
-            }, 500)
-        })
-        observSection.observe(section.current)
+        // const observSection = new IntersectionObserver((entrie) => {
+        //     setTimeout(() => {
+        //         // setSectionIntersction(entrie[0].isIntersecting)
+        //     }, 500)
+        // })
+        // observSection.observe(section.current)
     }, [])
     let section = useRef()
     return (

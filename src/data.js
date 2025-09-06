@@ -1,4 +1,5 @@
-export default {
+
+let data = {
     personaleInfo: {
         name: 'Bassel',
         surename: 'ASSI',
@@ -155,3 +156,6 @@ export default {
     ]
 
 }
+
+
+export default data

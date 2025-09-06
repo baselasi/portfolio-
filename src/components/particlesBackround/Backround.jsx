@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 // Colors
 const DOT_COLOR1 = "#FFFFFF"; // White
 const DOT_COLOR2 = "#00FF00"; // Lime
-const LINE_COLORS = [DOT_COLOR1, DOT_COLOR2];
+// const LINE_COLORS = [DOT_COLOR1, DOT_COLOR2];
 const BACKGROUND_COLOR = "#000000";
 
 // Config
