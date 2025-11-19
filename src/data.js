@@ -75,20 +75,21 @@ let data = {
             logo: '../imgs/react.png'
         },
         {
-            skill: 'EXPRESSJS',
-            competence: 50,
-            logo: '../imgs/Expressjs.png'
-        },
-        {
-            skill: 'NODE',
+            skill: 'Flutter',
             competence: 70,
             logo: '../imgs/node.png'
         },
         {
-            skill: 'Flutter',
+            skill: 'EXPRESSJS',
+            competence: 30,
+            logo: '../imgs/Expressjs.png'
+        },
+        {
+            skill: 'NODE',
             competence: 50,
             logo: '../imgs/node.png'
         },
+
         {
             skill: 'tailwind',
             competence: 80,
